@@ -1,12 +1,12 @@
 {
  "name": "P03_the_second_peel",
  "fps": 24,
- "frames": 399,
- "duration": 16.625,
+ "frames": 377,
+ "duration": 15.708,
  "marks": {
-  "gloat": 6.535333333333334,
-  "step": 11.481788429662684,
-  "slip": 11.231788429662684
+  "gloat": 6.397166123711779,
+  "step": 10.56916612371178,
+  "slip": 10.31916612371178
  },
  "events": [
   {
@@ -85,473 +85,500 @@
    "action": "point"
   },
   {
-   "t": 3.263,
-   "end": 5.783,
+   "t": 3.133,
+   "end": 4.085,
+   "kind": "action",
+   "char": "Piko",
+   "action": "turn"
+  },
+  {
+   "t": 3.965,
+   "end": 5.645,
    "kind": "action",
    "char": "Piko",
    "action": "walk"
   },
   {
    "t": 4.4,
-   "end": 8.685,
+   "end": 8.547,
    "kind": "action",
    "char": "Zop",
    "action": "idle"
   },
   {
-   "t": 5.531,
-   "end": 6.785,
+   "t": 5.393,
+   "end": 6.647,
    "kind": "action",
    "char": "Piko",
    "action": "stop"
   },
   {
-   "t": 6.535,
-   "end": 8.151,
+   "t": 6.397,
+   "end": 8.013,
    "kind": "action",
    "char": "Piko",
    "action": "celebrate"
   },
   {
-   "t": 6.535333333333334,
+   "t": 6.397166123711779,
    "kind": "cut"
   },
   {
-   "t": 7.835333333333334,
+   "t": 7.697166123711779,
    "kind": "cut"
   },
   {
-   "t": 7.851,
-   "end": 8.985,
+   "t": 7.713,
+   "end": 8.847,
    "kind": "action",
    "char": "Piko",
    "action": "idle"
   },
   {
-   "t": 7.885,
+   "t": 7.747,
    "kind": "fall_start",
    "dur": 0.586,
    "sound": "none",
    "prop": "peel2"
   },
   {
-   "t": 8.435,
-   "end": 10.135,
+   "t": 8.297,
+   "end": 9.997,
    "kind": "action",
    "char": "Zop",
    "action": "point"
   },
   {
-   "t": 8.471,
+   "t": 8.333,
    "kind": "land",
    "strength": 1.0,
    "sound": "tap",
    "prop": "peel2"
   },
   {
-   "t": 8.622,
+   "t": 8.484,
    "kind": "land",
    "strength": 0.35,
    "sound": "tap",
    "prop": "peel2"
   },
   {
-   "t": 8.735,
-   "end": 9.76,
-   "kind": "action",
-   "char": "Piko",
-   "action": "turn"
-  },
-  {
-   "t": 9.64,
-   "end": 10.48,
+   "t": 8.727,
+   "end": 9.567,
    "kind": "action",
    "char": "Piko",
    "action": "walk"
   },
   {
-   "t": 9.835,
-   "end": 12.682,
-   "kind": "action",
-   "char": "Zop",
-   "action": "idle"
-  },
-  {
-   "t": 10.228,
-   "end": 11.482,
+   "t": 9.315,
+   "end": 10.569,
    "kind": "action",
    "char": "Piko",
    "action": "stop"
   },
   {
-   "t": 11.231788429662684,
-   "sound": "woosh",
-   "kind": "cue"
+   "t": 9.697,
+   "end": 11.769,
+   "kind": "action",
+   "char": "Zop",
+   "action": "idle"
   },
   {
-   "t": 11.232,
-   "end": 13.532,
+   "t": 10.319,
+   "end": 12.619,
    "kind": "action",
    "char": "Piko",
    "action": "slip"
   },
   {
-   "t": 12.181788429662683,
-   "sound": "thud_soft",
+   "t": 10.31916612371178,
+   "sound": "woosh",
    "kind": "cue"
   },
   {
-   "t": 12.182,
+   "t": 11.269,
    "kind": "fx",
    "fx": "puff"
   },
   {
-   "t": 12.182,
+   "t": 11.269,
    "kind": "fx",
    "fx": "burst"
   },
   {
-   "t": 12.232,
+   "t": 11.269166123711779,
+   "sound": "thud_soft",
+   "kind": "cue"
+  },
+  {
+   "t": 11.319,
    "kind": "land",
    "strength": 0.6,
    "sound": "pop",
    "prop": "peel2"
   },
   {
-   "t": 12.432,
-   "end": 14.632,
+   "t": 11.519,
+   "end": 13.719,
    "kind": "action",
    "char": "Zop",
    "action": "happiness"
   },
   {
-   "t": 12.481788429662684,
+   "t": 11.56916612371178,
    "sound": "giggle",
    "kind": "cue"
   },
   {
-   "t": 13.232,
-   "end": 14.582,
+   "t": 12.319,
+   "end": 13.669,
    "kind": "action",
    "char": "Piko",
    "action": "floor_idle"
   },
   {
-   "t": 14.131788429662684,
+   "t": 13.21916612371178,
    "sound": "whistle_long",
    "kind": "cue"
   },
   {
-   "t": 14.232,
+   "t": 13.319,
    "kind": "fall_start",
    "dur": 0.666,
    "sound": "none",
    "prop": "rain00"
   },
   {
-   "t": 14.282,
-   "end": 15.782,
+   "t": 13.369,
+   "end": 16.369,
    "kind": "action",
    "char": "Piko",
-   "action": "idle"
+   "action": "floor_idle"
   },
   {
-   "t": 14.352,
+   "t": 13.439,
    "kind": "fall_start",
    "dur": 0.614,
    "sound": "none",
    "prop": "rain01"
   },
   {
-   "t": 14.382,
-   "end": 17.082,
+   "t": 13.469,
+   "end": 16.169,
    "kind": "action",
    "char": "Zop",
    "action": "fear"
   },
   {
-   "t": 14.452,
+   "t": 13.539,
    "kind": "fall_start",
    "dur": 0.628,
    "sound": "none",
    "prop": "rain02"
   },
   {
-   "t": 14.552,
+   "t": 13.639,
    "kind": "fall_start",
    "dur": 0.675,
    "sound": "none",
    "prop": "rain03"
   },
   {
-   "t": 14.602,
+   "t": 13.689,
    "kind": "fall_start",
    "dur": 0.643,
    "sound": "none",
    "prop": "rain04"
   },
   {
-   "t": 14.682,
+   "t": 13.769,
    "kind": "fall_start",
    "dur": 0.64,
    "sound": "none",
    "prop": "rain05"
   },
   {
-   "t": 14.782,
+   "t": 13.869,
    "kind": "fall_start",
    "dur": 0.706,
    "sound": "none",
    "prop": "rain06"
   },
   {
-   "t": 14.882,
+   "t": 13.969,
    "kind": "fall_start",
    "dur": 0.612,
    "sound": "none",
    "prop": "rain07"
   },
   {
-   "t": 14.898,
+   "t": 13.985,
    "kind": "land",
    "strength": 1.0,
    "sound": "tap",
    "prop": "rain00"
   },
   {
-   "t": 14.966,
+   "t": 14.053,
    "kind": "land",
    "strength": 1.0,
    "sound": "tap",
    "prop": "rain01"
   },
   {
-   "t": 14.982,
+   "t": 14.069,
    "kind": "fall_start",
    "dur": 0.623,
    "sound": "none",
    "prop": "rain08"
   },
   {
-   "t": 15.042,
+   "t": 14.129,
    "kind": "fall_start",
    "dur": 0.619,
    "sound": "none",
    "prop": "rain09"
   },
   {
-   "t": 15.049,
+   "t": 14.136,
    "kind": "land",
    "strength": 0.35,
    "sound": "tap",
    "prop": "rain00"
   },
   {
-   "t": 15.079,
+   "t": 14.167,
    "kind": "land",
    "strength": 1.0,
    "sound": "tap",
    "prop": "rain02"
   },
   {
-   "t": 15.117,
+   "t": 14.205,
    "kind": "land",
    "strength": 0.35,
    "sound": "tap",
    "prop": "rain01"
   },
   {
-   "t": 15.152,
+   "t": 14.239,
    "kind": "fall_start",
    "dur": 0.709,
    "sound": "none",
    "prop": "rain10"
   },
   {
-   "t": 15.222,
+   "t": 14.309,
    "kind": "fall_start",
    "dur": 0.674,
    "sound": "none",
    "prop": "rain11"
   },
   {
-   "t": 15.227,
+   "t": 14.314,
    "kind": "land",
    "strength": 1.0,
    "sound": "tap",
    "prop": "rain03"
   },
   {
-   "t": 15.231,
+   "t": 14.318,
    "kind": "land",
    "strength": 0.35,
    "sound": "tap",
    "prop": "rain02"
   },
   {
-   "t": 15.244,
+   "t": 14.332,
    "kind": "land",
    "strength": 1.0,
    "sound": "tap",
    "prop": "rain04"
   },
   {
-   "t": 15.312,
+   "t": 14.399,
    "kind": "fall_start",
    "dur": 0.671,
    "sound": "none",
    "prop": "rain12"
   },
   {
-   "t": 15.322,
+   "t": 14.409,
    "kind": "land",
    "strength": 1.0,
    "sound": "tap",
    "prop": "rain05"
   },
   {
-   "t": 15.378,
+   "t": 14.465,
    "kind": "land",
    "strength": 0.35,
    "sound": "tap",
    "prop": "rain03"
   },
   {
-   "t": 15.396,
+   "t": 14.483,
    "kind": "land",
    "strength": 0.35,
    "sound": "tap",
    "prop": "rain04"
   },
   {
-   "t": 15.452,
+   "t": 14.539,
    "kind": "fall_start",
    "dur": 0.717,
    "sound": "none",
    "prop": "rain13"
   },
   {
-   "t": 15.473,
+   "t": 14.56,
    "kind": "land",
    "strength": 0.35,
    "sound": "tap",
    "prop": "rain05"
   },
   {
-   "t": 15.488,
+   "t": 14.575,
    "kind": "land",
    "strength": 1.0,
    "sound": "tap",
    "prop": "rain06"
   },
   {
-   "t": 15.494,
+   "t": 14.581,
    "kind": "land",
    "strength": 1.0,
    "sound": "tap",
    "prop": "rain07"
   },
   {
-   "t": 15.605,
+   "t": 14.669,
+   "kind": "fall_start",
+   "dur": 0.609,
+   "sound": "none",
+   "prop": "hat_zop"
+  },
+  {
+   "t": 14.693,
    "kind": "land",
    "strength": 1.0,
    "sound": "tap",
    "prop": "rain08"
   },
   {
-   "t": 15.639,
+   "t": 14.726,
    "kind": "land",
    "strength": 0.35,
    "sound": "tap",
    "prop": "rain06"
   },
   {
-   "t": 15.645,
+   "t": 14.733,
    "kind": "land",
    "strength": 0.35,
    "sound": "tap",
    "prop": "rain07"
   },
   {
-   "t": 15.661,
+   "t": 14.748,
    "kind": "land",
    "strength": 1.0,
    "sound": "tap",
    "prop": "rain09"
   },
   {
-   "t": 15.756,
+   "t": 14.844,
    "kind": "land",
    "strength": 0.35,
    "sound": "tap",
    "prop": "rain08"
   },
   {
-   "t": 15.812,
+   "t": 14.9,
    "kind": "land",
    "strength": 0.35,
    "sound": "tap",
    "prop": "rain09"
   },
   {
-   "t": 15.861,
+   "t": 14.948,
    "kind": "land",
    "strength": 1.0,
    "sound": "tap",
    "prop": "rain10"
   },
   {
-   "t": 15.896,
+   "t": 14.983,
    "kind": "land",
    "strength": 1.0,
    "sound": "tap",
    "prop": "rain11"
   },
   {
-   "t": 15.983,
+   "t": 15.071,
    "kind": "land",
    "strength": 1.0,
    "sound": "tap",
    "prop": "rain12"
   },
   {
-   "t": 16.012,
+   "t": 15.1,
    "kind": "land",
    "strength": 0.35,
    "sound": "tap",
    "prop": "rain10"
   },
   {
-   "t": 16.047,
+   "t": 15.134,
    "kind": "land",
    "strength": 0.35,
    "sound": "tap",
    "prop": "rain11"
   },
   {
-   "t": 16.134,
+   "t": 15.222,
    "kind": "land",
    "strength": 0.35,
    "sound": "tap",
    "prop": "rain12"
   },
   {
-   "t": 16.169,
+   "t": 15.256,
    "kind": "land",
    "strength": 1.0,
    "sound": "tap",
    "prop": "rain13"
   },
   {
-   "t": 16.32,
+   "t": 15.26916612371178,
+   "sound": "boing",
+   "gain": -6,
+   "kind": "cue"
+  },
+  {
+   "t": 15.279,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "pop",
+   "prop": "hat_zop"
+  },
+  {
+   "t": 15.407,
    "kind": "land",
    "strength": 0.35,
    "sound": "tap",
    "prop": "rain13"
   },
   {
-   "t": 16.782,
-   "end": 17.782,
+   "t": 15.41,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "hat_zop"
+  },
+  {
+   "t": 15.869,
+   "end": 16.869,
    "kind": "action",
    "char": "Zop",
    "action": "idle"
