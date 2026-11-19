@@ -1,5 +1,14 @@
 # Metadata drafts for the pilots (not published — waiting for the author's approval)
 
+## Decisions needed from the author before the first upload
+
+- **YouTube audience ("made for kids")**: a legal declaration (COPPA) that only the author can make. "Made for kids"
+  turns off comments, the notification bell and personalised ads (lower revenue), and the video is shown mostly to
+  children. "Not made for kids" fits a general audience of all ages, which is how ZOPPIKO is written. Ask, never assume.
+- **AI label**: the videos are 3D animation built with code in Blender, not realistic generated footage, so YouTube's
+  "altered or synthetic content" disclosure and TikTok's AI-generated label are not required. The author may still want
+  the label for transparency: ask.
+
 Music credit (CC-BY 4.0) goes in every description or caption, in the form shown.
 
 ## P01 · The Button (15.3 s)
