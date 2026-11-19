@@ -453,11 +453,13 @@ class Track:
             elif 'fly' in seg:
                 d = seg['fly']; a = Vector(d.get('from', p)); b = Vector(d['to'])
                 self.plan.append(('fly', t, dict(a=a, b=b, dur=d.get('dur', 0.6), arc=d.get('arc', 0.3),
-                                                 spin=Vector(d.get('spin', (0, 0, 0))), r=r.copy())))
+                                                 spin=Vector(d.get('spin', (0, 0, 0))), r=r.copy(),
+                                                 rot_to=Vector(d['rot_to']) if 'rot_to' in d else None)))
                 if d.get('land', True):
                     self.events.append(dict(t=round(t + d.get('dur', 0.6), 3), kind='land', strength=d.get('strength', 0.6),
                                             sound=d.get('sound', 'thud')))
-                p = b.copy(); r = r + Vector(d.get('spin', (0, 0, 0))) * d.get('dur', 0.6)
+                p = b.copy()
+                r = Vector(d['rot_to']) if 'rot_to' in d else r + Vector(d.get('spin', (0, 0, 0))) * d.get('dur', 0.6)
             elif 'ballistic' in seg:
                 d = seg['ballistic']
                 self.plan.append(('ballistic', t, dict(a=Vector(d.get('from', p)), v=Vector(d['v']), g=d.get('g', 12.0),
@@ -537,6 +539,9 @@ class Track:
         if kind == 'fly':
             k = min(1.0, max(0.0, u / d['dur']))
             pos = d['a'].lerp(d['b'], k) + Vector((0, 0, 4 * d['arc'] * k * (1 - k)))
+            if d['rot_to'] is not None:                  # settles to a given rotation (e.g. lying flat after a hit)
+                e = 1 - (1 - k) ** 2
+                return pos, d['r'].lerp(d['rot_to'], e), s
             return pos, d['r'] + d['spin'] * min(u, d['dur']), s
         if kind == 'ballistic':
             pos = d['a'] + d['v'] * u + Vector((0, 0, -0.5 * d['g'] * u * u))

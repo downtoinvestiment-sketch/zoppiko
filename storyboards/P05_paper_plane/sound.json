@@ -1,0 +1,70 @@
+{
+ "music": {
+  "file": "audio/music/Sneaky_Snitch.mp3",
+  "level": -19,
+  "start": 0.0,
+  "offset": 0.0,
+  "fade_in": 0.6,
+  "mute": [
+   [
+    2.83,
+    3.75
+   ],
+   [
+    7.327,
+    8.6
+   ],
+   [
+    10.9,
+    13.5
+   ]
+  ],
+  "fade": 0.12
+ },
+ "rules": true,
+ "cues": [
+  {
+   "t": 2.84,
+   "sound": "boing",
+   "gain": -13
+  },
+  {
+   "t": 2.85,
+   "sound": "tap",
+   "gain": -6
+  },
+  {
+   "t": 5.4,
+   "sound": "woosh",
+   "gain": -12
+  },
+  {
+   "t": 7.777,
+   "sound": "woosh",
+   "gain": -8
+  },
+  {
+   "t": 9.5,
+   "sound": "rimshot",
+   "gain": -14
+  },
+  {
+   "t": 12.69,
+   "sound": "boing",
+   "gain": -10
+  },
+  {
+   "t": 12.7,
+   "sound": "tap",
+   "gain": -5
+  },
+  {
+   "t": 13.15,
+   "sound": "giggle",
+   "gain": -10,
+   "length": 1.5,
+   "fade_out": 0.35
+  }
+ ],
+ "credits": "\"Sneaky Snitch\" Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/"
+}
