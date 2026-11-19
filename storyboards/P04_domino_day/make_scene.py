@@ -17,9 +17,9 @@ FPS = 24
 G = 9.81
 
 # ------------------------------------------------------------------ the path (rows across the frame, U-turns)
-R = 0.32
-ROWS = [-0.55, 0.09, 0.73]
-X0, X1 = -0.80, 0.80
+R = 0.30
+ROWS = [-0.55, 0.05, 0.65, 1.25]
+X0, X1 = -0.60, 0.60
 START = (0.60, -1.04)                       # beside Piko's right foot
 
 
@@ -31,7 +31,9 @@ def path_pieces():
     p.append(('arc', (X0, ROWS[0] + R), R, -90.0, -270.0))                       # -x, round the left end, to +x
     p.append(('line', (X0, ROWS[1]), (X1, ROWS[1])))
     p.append(('arc', (X1, ROWS[1] + R), R, -90.0, 90.0))                         # +x, round the right end, to -x
-    p.append(('line', (X1, ROWS[2]), (-0.05, ROWS[2])))
+    p.append(('line', (X1, ROWS[2]), (X0, ROWS[2])))
+    p.append(('arc', (X0, ROWS[2] + R), R, -90.0, -270.0))                       # -x, round the left end, to +x
+    p.append(('line', (X0, ROWS[3]), (-0.25, ROWS[3])))
     return p
 
 
@@ -67,7 +69,7 @@ TOTAL = sum(piece_len(pc) for pc in path_pieces())
 # ------------------------------------------------------------------ the dominoes
 COLORS = ['zop', 'piko', 'yellow', 'teal', 'coral', 'cream']
 H, W, WIDE_ = 0.26, 0.05, 0.14
-GAP = 0.16                                  # front edge to front edge
+GAP = 0.17                                  # front edge to front edge
 dominoes = []
 s = 0.0
 while s <= TOTAL + 1e-6:
@@ -243,12 +245,11 @@ ball = {"name": "ball", "type": "beachball", "radius": 0.3, "location": [ZOP[0] 
                    {"t": "cel+%.4f" % (HIT + 1.0), "ballistic": {"v": [-1.6, 1.1, 3.2], "g": 12.0, "spin": [0, -420, 90]}},
                    {"t": "cel+%.4f" % (HIT + 2.6), "hide": True}]}
 
-LINE_FAR = [0.0, 0.25, 0.0]
-WIDE = {"location": [0.05, -3.55, 3.25], "target": [0.02, -0.05, 0.0], "lens": 30}
-MED = {"location": [-0.02, -3.55, 0.92], "target": [0.02, -1.05, 0.55], "lens": 44}
-CHAIN = {"location": [0.05, -3.25, 2.85], "target": [0.05, -0.15, 0.05], "lens": 31,
-         "move": {"delay": 0.0, "dur": 3.6, "location": [-0.25, -2.75, 2.55], "target": [-0.35, 0.25, 0.05], "lens": 33}}
-END = {"location": [-0.12, -3.45, 0.92], "target": [-0.08, -1.1, 0.62], "lens": 46}
+WIDE = {"location": [0.0, -1.6, 2.7], "target": [0.0, 0.2, 0.0], "lens": 28}
+MED = {"location": [0.1, -4.2, 0.95], "target": [0.1, -1.1, 0.55], "lens": 40}
+CHAIN = {"location": [0.0, -1.6, 2.7], "target": [0.0, 0.2, 0.0], "lens": 28,
+         "move": {"delay": 0.3, "dur": 4.2, "location": [0.12, -1.15, 2.55], "target": [0.15, 0.5, 0.0], "lens": 28}}
+END = {"location": [-0.06, -3.6, 0.95], "target": [-0.06, -1.15, 0.62], "lens": 40}
 
 spec = {
   "name": "P04_domino_day", "title": "Domino Day",

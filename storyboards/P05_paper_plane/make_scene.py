@@ -37,10 +37,10 @@ fore = head_point(PIKO, PF, 1.0, 0.06)
 nape = head_point(PIKO, PF, -1.0, 0.02)
 
 # flight 1: from the top right, a wide glide in front of them, into Piko's forehead
-T1, D1 = 0.30, 2.55
+T1, D1 = 0.0, 2.15
 pre1 = (0.05, -0.85, 0.95)
 hit1 = approach(fore, pre1)
-path1 = [[1.9, 1.6, 2.9], [1.1, 0.2, 2.2], [0.2, -1.1, 1.65], [-0.75, -0.9, 1.3], [-0.55, -0.55, 1.05], list(pre1), hit1]
+path1 = [[1.35, 0.7, 2.45], [1.0, 0.0, 2.1], [0.2, -1.1, 1.65], [-0.75, -0.9, 1.3], [-0.55, -0.55, 1.05], list(pre1), hit1]
 HIT1 = T1 + D1
 GROUND1 = [0.22, -0.52, 0.05]
 
@@ -82,19 +82,18 @@ spec = {
   "stage": {"hdri": {"id": "kloofendal_48d_partly_cloudy_puresky", "strength": 2.0, "rotation": 40},
             "grass_texture": {"id": "Grass005", "size": 0.9}, "ambient": 0.55, "ambient_color": "#CFE0FF"},
   "light": {"sun": 3.2, "azimuth": -38, "elevation": 48, "rim": 180},
-  "camera": {"shots": [dict(WIDE, t=0), dict(HOME, t=round(HIT1 - 0.9, 3)), dict(WIDE, t=round(T2 + 0.2, 3)),
+  "camera": {"shots": [dict(HOME, t=0), dict(WIDE, t=round(T2 + 0.2, 3)),
                        dict(HOME, t=round(LAND2 + 0.25, 3)), dict(CLOSE, t=round(HIT3 + 0.9, 3))],
              "shakes": [{"t": round(HIT1, 3), "amount": 0.008, "dur": 0.2}, {"t": round(HIT3, 3), "amount": 0.01, "dur": 0.22}]},
   "props": [plane],
   "characters": [
     {"name": "Piko", "location": list(PIKO), "facing": PF,
      "actions": [
-       {"look_at": "Zop", "at": 0.0, "duration": 0.6},
-       {"look_at": [1.1, 0.2, 2.2], "at": 0.6, "duration": 0.5},
-       {"look_at": [0.2, -1.1, 1.65], "at": 1.1, "duration": 0.6},
-       {"look_at": [-0.7, -0.85, 1.25], "at": 1.7, "duration": 0.5},
-       {"look_at": [0.0, -0.9, 0.95], "at": 2.2, "duration": 0.7},
-       {"expression": "happy", "at": 0.8, "duration": 1.5},
+       {"look_at": [1.0, 0.0, 2.1], "at": 0.0, "duration": 0.5},
+       {"look_at": [0.2, -1.1, 1.65], "at": 0.5, "duration": 0.6},
+       {"look_at": [-0.7, -0.85, 1.25], "at": 1.1, "duration": 0.5},
+       {"look_at": [0.0, -0.9, 0.95], "at": 1.6, "duration": 0.7},
+       {"expression": "happy", "at": 0.0, "duration": 1.6},
        {"expression": "surprised", "at": round(HIT1 - 0.35, 3), "duration": 0.45},
        {"until": round(HIT1 + 0.05, 3)}, {"play": "anger"},
        {"expression": "angry", "at": round(HIT1 + 0.1, 3), "duration": 2.2},
@@ -117,12 +116,11 @@ spec = {
        {"wait": 0.4}]},
     {"name": "Zop", "location": list(ZOP), "facing": 20,
      "actions": [
-       {"look_at": "Piko", "at": 0.0, "duration": 0.7},
-       {"look_at": [1.1, 0.2, 2.2], "at": 0.7, "duration": 0.5},
-       {"look_at": [0.2, -1.1, 1.65], "at": 1.2, "duration": 0.6},
-       {"look_at": [-0.7, -0.85, 1.25], "at": 1.8, "duration": 0.4},
-       {"look_at": [0.0, -0.9, 0.95], "at": 2.2, "duration": 0.7},
-       {"expression": "joy", "at": 0.9, "duration": 1.4},
+       {"look_at": [1.0, 0.0, 2.1], "at": 0.0, "duration": 0.55},
+       {"look_at": [0.2, -1.1, 1.65], "at": 0.55, "duration": 0.6},
+       {"look_at": [-0.7, -0.85, 1.25], "at": 1.15, "duration": 0.45},
+       {"look_at": [0.0, -0.9, 0.95], "at": 1.6, "duration": 0.7},
+       {"expression": "joy", "at": 0.0, "duration": 1.6},
        {"look_at": "Piko", "at": round(HIT1 + 0.05, 3), "duration": 1.6},
        {"until": round(HIT1 + 0.25, 3)}, {"play": "happiness"},
        {"expression": "joy", "at": round(HIT1 + 0.2, 3), "duration": 2.0},

@@ -32,34 +32,20 @@
   "shots": [
    {
     "location": [
-     0.1,
-     -4.6,
-     1.35
+     0.0,
+     -4.0,
+     0.95
     ],
     "target": [
-     0.15,
-     0.2,
-     0.9
+     0.0,
+     0.0,
+     0.78
     ],
-    "lens": 32,
+    "lens": 40,
     "t": 0
    },
    {
     "location": [
-     0.0,
-     -4.0,
-     0.95
-    ],
-    "target": [
-     0.0,
-     0.0,
-     0.78
-    ],
-    "lens": 40,
-    "t": 1.95
-   },
-   {
-    "location": [
      0.1,
      -4.6,
      1.35
@@ -70,7 +56,7 @@
      0.9
     ],
     "lens": 32,
-    "t": 5.6
+    "t": 4.9
    },
    {
     "location": [
@@ -84,7 +70,7 @@
      0.78
     ],
     "lens": 40,
-    "t": 8.55
+    "t": 7.85
    },
    {
     "location": [
@@ -98,17 +84,17 @@
      0.86
     ],
     "lens": 50,
-    "t": 13.6
+    "t": 12.9
    }
   ],
   "shakes": [
    {
-    "t": 2.85,
+    "t": 2.15,
     "amount": 0.008,
     "dur": 0.2
    },
    {
-    "t": 12.7,
+    "t": 12.0,
     "amount": 0.01,
     "dur": 0.22
    }
@@ -124,9 +110,9 @@
    "color": "cream",
    "stripe": "coral",
    "location": [
-    1.9,
-    1.6,
-    2.9
+    1.35,
+    0.7,
+    2.45
    ],
    "rotation": [
     0,
@@ -135,13 +121,13 @@
    ],
    "motion": [
     {
-     "t": 0.3,
+     "t": 0.0,
      "path": {
       "points": [
        [
-        1.1,
-        0.2,
-        2.2
+        1.0,
+        0.0,
+        2.1
        ],
        [
         0.2,
@@ -169,14 +155,14 @@
         0.906
        ]
       ],
-      "dur": 2.55,
+      "dur": 2.15,
       "ease": "linear",
       "bank": 0.7,
       "pitch": 0.8
      }
     },
     {
-     "t": 2.8499999999999996,
+     "t": 2.15,
      "fly": {
       "to": [
        0.22,
@@ -195,7 +181,7 @@
      }
     },
     {
-     "t": 5.3999999999999995,
+     "t": 4.699999999999999,
      "path": {
       "points": [
        [
@@ -269,7 +255,7 @@
      }
     },
     {
-     "t": 8.299999999999999,
+     "t": 7.6,
      "fly": {
       "to": [
        1.05,
@@ -287,7 +273,7 @@
      }
     },
     {
-     "t": 10.95,
+     "t": 10.25,
      "path": {
       "points": [
        [
@@ -328,7 +314,7 @@
      }
     },
     {
-     "t": 12.7,
+     "t": 12.0,
      "fly": {
       "to": [
        0.62,
@@ -359,17 +345,12 @@
    "facing": -20,
    "actions": [
     {
-     "look_at": "Zop",
-     "at": 0.0,
-     "duration": 0.6
-    },
-    {
      "look_at": [
-      1.1,
-      0.2,
-      2.2
+      1.0,
+      0.0,
+      2.1
      ],
-     "at": 0.6,
+     "at": 0.0,
      "duration": 0.5
     },
     {
@@ -378,7 +359,7 @@
       -1.1,
       1.65
      ],
-     "at": 1.1,
+     "at": 0.5,
      "duration": 0.6
     },
     {
@@ -387,7 +368,7 @@
       -0.85,
       1.25
      ],
-     "at": 1.7,
+     "at": 1.1,
      "duration": 0.5
     },
     {
@@ -396,33 +377,33 @@
       -0.9,
       0.95
      ],
-     "at": 2.2,
+     "at": 1.6,
      "duration": 0.7
     },
     {
      "expression": "happy",
-     "at": 0.8,
-     "duration": 1.5
+     "at": 0.0,
+     "duration": 1.6
     },
     {
      "expression": "surprised",
-     "at": 2.5,
+     "at": 1.8,
      "duration": 0.45
     },
     {
-     "until": 2.9
+     "until": 2.2
     },
     {
      "play": "anger"
     },
     {
      "expression": "angry",
-     "at": 2.95,
+     "at": 2.25,
      "duration": 2.2
     },
     {
      "look_at": "Zop",
-     "at": 3.85,
+     "at": 3.15,
      "duration": 1.2
     },
     {
@@ -431,12 +412,12 @@
       -0.52,
       0.05
      ],
-     "at": 5.0,
+     "at": 4.3,
      "duration": 0.6
     },
     {
      "expression": "shocked",
-     "at": 5.5,
+     "at": 4.8,
      "duration": 0.6
     },
     {
@@ -445,7 +426,7 @@
       -0.2,
       1.1
      ],
-     "at": 6.0,
+     "at": 5.3,
      "duration": 0.5
     },
     {
@@ -454,7 +435,7 @@
       1.3,
       1.45
      ],
-     "at": 6.5,
+     "at": 5.8,
      "duration": 0.5
     },
     {
@@ -463,16 +444,16 @@
       -0.6,
       1.3
      ],
-     "at": 7.0,
+     "at": 6.3,
      "duration": 0.3
     },
     {
      "expression": "scared",
-     "at": 7.027,
+     "at": 6.327,
      "duration": 1.4
     },
     {
-     "until": 7.227
+     "until": 6.527
     },
     {
      "play": "fear",
@@ -484,43 +465,43 @@
       1.42,
       0.0
      ],
-     "at": 8.4,
+     "at": 7.7,
      "duration": 0.8
     },
     {
      "expression": "smug",
-     "at": 8.8,
+     "at": 8.1,
      "duration": 2.2
     },
     {
      "look_at": "camera",
-     "at": 9.2,
+     "at": 8.5,
      "duration": 1.6
     },
     {
-     "until": 9.2
+     "until": 8.5
     },
     {
      "play": "happiness"
     },
     {
      "expression": "shocked",
-     "at": 12.72,
+     "at": 12.02,
      "duration": 0.9
     },
     {
-     "until": 12.72
+     "until": 12.02
     },
     {
      "play": "exaggerated_reaction"
     },
     {
      "expression": "angry",
-     "at": 13.8,
+     "at": 13.1,
      "duration": 1.6
     },
     {
-     "until": 14.1
+     "until": 13.4
     },
     {
      "play": "facepalm"
@@ -539,18 +520,13 @@
    "facing": 20,
    "actions": [
     {
-     "look_at": "Piko",
-     "at": 0.0,
-     "duration": 0.7
-    },
-    {
      "look_at": [
-      1.1,
-      0.2,
-      2.2
+      1.0,
+      0.0,
+      2.1
      ],
-     "at": 0.7,
-     "duration": 0.5
+     "at": 0.0,
+     "duration": 0.55
     },
     {
      "look_at": [
@@ -558,7 +534,7 @@
       -1.1,
       1.65
      ],
-     "at": 1.2,
+     "at": 0.55,
      "duration": 0.6
     },
     {
@@ -567,8 +543,8 @@
       -0.85,
       1.25
      ],
-     "at": 1.8,
-     "duration": 0.4
+     "at": 1.15,
+     "duration": 0.45
     },
     {
      "look_at": [
@@ -576,28 +552,28 @@
       -0.9,
       0.95
      ],
-     "at": 2.2,
+     "at": 1.6,
      "duration": 0.7
     },
     {
      "expression": "joy",
-     "at": 0.9,
-     "duration": 1.4
-    },
-    {
-     "look_at": "Piko",
-     "at": 2.9,
+     "at": 0.0,
      "duration": 1.6
     },
     {
-     "until": 3.1
+     "look_at": "Piko",
+     "at": 2.2,
+     "duration": 1.6
+    },
+    {
+     "until": 2.4
     },
     {
      "play": "happiness"
     },
     {
      "expression": "joy",
-     "at": 3.05,
+     "at": 2.35,
      "duration": 2.0
     },
     {
@@ -606,7 +582,7 @@
       -0.2,
       1.1
      ],
-     "at": 6.0,
+     "at": 5.3,
      "duration": 0.5
     },
     {
@@ -615,7 +591,7 @@
       1.3,
       1.45
      ],
-     "at": 6.5,
+     "at": 5.8,
      "duration": 0.5
     },
     {
@@ -624,12 +600,12 @@
       -0.6,
       1.3
      ],
-     "at": 7.0,
+     "at": 6.3,
      "duration": 0.6
     },
     {
      "expression": "surprised",
-     "at": 5.6,
+     "at": 4.9,
      "duration": 1.6
     },
     {
@@ -638,17 +614,17 @@
       1.42,
       0.0
      ],
-     "at": 8.1,
+     "at": 7.4,
      "duration": 1.0
     },
     {
      "look_at": "Piko",
-     "at": 9.2,
+     "at": 8.5,
      "duration": 1.4
     },
     {
      "expression": "confused",
-     "at": 9.3,
+     "at": 8.6,
      "duration": 1.0
     },
     {
@@ -657,28 +633,28 @@
       1.48,
       0.4
      ],
-     "at": 10.65,
+     "at": 9.95,
      "duration": 0.8
     },
     {
      "expression": "surprised",
-     "at": 10.75,
+     "at": 10.05,
      "duration": 1.2
     },
     {
      "look_at": "Piko",
-     "at": 12.7,
+     "at": 12.0,
      "duration": 1.6
     },
     {
-     "until": 13.0
+     "until": 12.3
     },
     {
      "play": "happiness"
     },
     {
      "expression": "joy",
-     "at": 13.0,
+     "at": 12.3,
      "duration": 2.0
     },
     {
@@ -689,7 +665,7 @@
  ],
  "fx": [
   {
-   "t": 2.85,
+   "t": 2.15,
    "type": "sparkle",
    "at": [
     0.3402148789466731,
@@ -700,7 +676,7 @@
    "dur": 0.25
   },
   {
-   "t": 12.7,
+   "t": 12.0,
    "type": "sparkle",
    "at": [
     0.4597851210533269,
@@ -711,14 +687,14 @@
    "dur": 0.25
   }
  ],
- "duration_from": 15.7,
+ "duration_from": 15.0,
  "cues": [],
  "meta": {
-  "hit1": 2.85,
-  "takeoff2": 5.4,
-  "duck": 7.227,
-  "land2": 8.3,
-  "takeoff3": 10.95,
-  "hit3": 12.7
+  "hit1": 2.15,
+  "takeoff2": 4.7,
+  "duck": 6.527,
+  "land2": 7.6,
+  "takeoff3": 10.25,
+  "hit3": 12.0
  }
 }
