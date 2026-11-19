@@ -52,8 +52,17 @@ def lowpass(x, cutoff):
     return y
 
 
-def place(buf, snd, t, gain=0.0, fade_in=0.004, fade_out=0.02, pan=0.0, tail=None, start=0.0, length=None, lp=None):
-    x = snd
+def repitch(x, semitones):
+    """plays the sound faster (higher) or slower (lower), like a tape: fine for clicks and knocks."""
+    if not semitones:
+        return x
+    k = 2 ** (semitones / 12.0)
+    idx = np.arange(0, len(x) - 1, k)
+    return np.interp(idx, np.arange(len(x)), x).astype(np.float32)
+
+
+def place(buf, snd, t, gain=0.0, fade_in=0.004, fade_out=0.02, pan=0.0, tail=None, start=0.0, length=None, lp=None, pitch=0.0):
+    x = repitch(snd, pitch)
     if tail is not None:                                   # the last `tail` seconds (a fall whistle that ends on impact)
         x = x[max(0, len(x) - int(tail * SR)):]
     else:
@@ -159,7 +168,7 @@ def main(story):
     for c in cues:
         place(buf, load(c['sound']), c['t'], gain=c.get('gain', 0), fade_in=c.get('fade_in', 0.004),
               fade_out=c.get('fade_out', 0.03), pan=c.get('pan', 0.0), tail=c.get('tail'), start=c.get('start', 0.0),
-              length=c.get('length'), lp=c.get('lowpass'))
+              length=c.get('length'), lp=c.get('lowpass'), pitch=c.get('pitch', 0.0))
     if snd.get('music'):
         mt = music_track(snd['music'], n, marks)
         buf += np.vstack([mt, mt])

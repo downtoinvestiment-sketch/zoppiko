@@ -446,6 +446,15 @@ class Track:
                 self.plan.append(('roll', t, dict(a=a, b=b, dur=d.get('dur', 1.0), radius=d.get('radius', 0.17),
                                                   ease=d.get('ease', 'in'), r=r.copy(), axis=d.get('axis', 'y'))))
                 p = b.copy()
+            elif 'tilt' in seg:                              # tips over on a bottom edge (dominoes): keys of [dt, degrees]
+                d = seg['tilt']
+                keys = [(t + k[0], float(k[1])) for k in d['keys']]
+                yaw = d.get('yaw', r.z); half = d.get('half', 0.025)
+                self.plan.append(('tilt', t, dict(keys=keys, half=half, yaw=yaw, base=p.copy())))
+                for e in d.get('events', []):
+                    self.events.append(dict(t=round(t + e['t'], 3), kind='cue', sound=e['sound'], gain=e.get('gain', 0.0),
+                                            pitch=e.get('pitch', 0.0), pan=e.get('pan', 0.0)))
+                p, r = tilt_pose(p, keys[-1][1], half, yaw)
             elif 'press' in seg:
                 self.events.append(dict(t=round(t, 3), kind='press', sound=seg.get('sound', 'click')))
             elif 'show' in seg or 'hide' in seg:
@@ -505,15 +514,55 @@ class Track:
             dv = d['b'] - d['a']
             yaw = math.degrees(math.atan2(dv.y, dv.x))
             return pos, Vector((90.0, -ang, yaw)), s       # standing on its edge, spinning on its axle, facing the path
+        if kind == 'tilt':
+            keys = d['keys']
+            if t <= keys[0][0]:
+                th = keys[0][1]
+            elif t >= keys[-1][0]:
+                th = keys[-1][1]
+            else:
+                lo, hi = 0, len(keys) - 1
+                while hi - lo > 1:
+                    mid = (lo + hi) // 2
+                    if keys[mid][0] <= t:
+                        lo = mid
+                    else:
+                        hi = mid
+                (ta, a), (tb, b) = keys[lo], keys[hi]
+                th = a + (b - a) * (t - ta) / max(1e-9, tb - ta)
+            pos, rot = tilt_pose(d['base'], th, d['half'], d['yaw'])
+            return pos, rot, s
         return p, r, s
+
+
+def tilt_pose(base, th, half, yaw):
+    """a box with its origin at the bottom centre, tipped by th degrees towards its local +y about the bottom edge
+    (towards -y about the back edge when th < 0), then turned by yaw about z."""
+    a = math.radians(th); sg = 1.0 if th >= 0 else -1.0
+    oy = sg * half * (1.0 - math.cos(a)); oz = half * abs(math.sin(a))
+    py = math.radians(yaw)
+    return Vector((base.x - oy * math.sin(py), base.y + oy * math.cos(py), base.z + oz)), Vector((-th, 0.0, yaw))
 
 
 def bake_prop(ob, track, spec, n, parts):
     prefs = bpy.context.preferences.edit
     prefs.keyframe_new_interpolation_type = 'LINEAR'
+    sparse = any('tilt' in s_ for s_ in track.segs)           # many still dominoes: key only where they move
+    states = [track.state((f - 1) / FPS) for f in range(1, n + 1)] if sparse else None
+
+    def still(i):
+        a, b = states[i], states[i - 1]
+        c = states[i + 1]
+        return all((a[k] - b[k]).length < 1e-7 and (a[k] - c[k]).length < 1e-7 for k in range(3))
+
     for f in range(1, n + 1):
         t = (f - 1) / FPS
-        p, r, s = track.state(t)
+        if sparse:
+            if 1 < f < n and still(f - 1):
+                continue
+            p, r, s = states[f - 1]
+        else:
+            p, r, s = track.state(t)
         ob.location = p
         ob.rotation_euler = Euler([math.radians(a) for a in r])
         ob.scale = s

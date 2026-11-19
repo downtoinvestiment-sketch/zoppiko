@@ -1,0 +1,32 @@
+{
+ "music": {
+  "file": "audio/music/Fluffing_a_Duck.mp3",
+  "level": -19,
+  "start": "cel+0.05",
+  "offset": 0.0,
+  "fade_in": 0.25,
+  "mute": [
+   [
+    "cel+5.172",
+    "cel+7.136"
+   ]
+  ],
+  "fade": 0.12
+ },
+ "rules": true,
+ "cues": [
+  {
+   "t": "cel+7.086",
+   "sound": "giggle",
+   "gain": -10,
+   "length": 1.5,
+   "fade_out": 0.35
+  },
+  {
+   "t": "cel+7.366",
+   "sound": "thud_soft",
+   "gain": -7
+  }
+ ],
+ "credits": "\"Fluffing a Duck\" Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/"
+}

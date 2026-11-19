@@ -8,6 +8,7 @@ Copied from the shared production kit (Pippo e Tumbo library, downloaded 16–17
 | --- | --- | --- |
 | whistle, boing, boing_metal, crickets, sad_trombone, click, bonk_birds, giggle, rimshot, woosh, pop, pops, surprise_sting | Mixkit (mixkit.co) | Mixkit Sound Effects Free License: commercial use and monetised videos allowed, no attribution; the files may not be redistributed on their own |
 | thud_metal, thud_soft, slap, tap, step_grass | Kenney impact sounds (kenney.nl) | CC0 |
+| domino_0…4 (impactWood_light), domino_big_0…1 (impactWood_heavy), copied 20 Nov 2026 | Kenney impact sounds (kenney.nl) | CC0 |
 
 ## Music (`audio/music/`)
 
@@ -19,7 +20,7 @@ Licensed under Creative Commons: By Attribution 4.0 License
 http://creativecommons.org/licenses/by/4.0/
 ```
 
-Same line with "Investigations" or "Quirky Dog" for those tracks. These tracks are used by many channels: plan an
+Same line with "Investigations", "Quirky Dog" or "Fluffing a Duck" for those tracks. These tracks are used by many channels: plan an
 original ZOPPIKO theme to own the sound.
 
 ## Effects images (`world/fx/`)
