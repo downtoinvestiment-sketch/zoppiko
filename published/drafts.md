@@ -49,3 +49,19 @@ Music credit (CC-BY 4.0) goes in every description or caption, in the form shown
 - **TikTok / Instagram caption:** He saw the first one 🍌
   Music: "Investigations" Kevin MacLeod (incompetech.com), CC BY 4.0 · #zoppiko #animation #cartoon #funny
 - **Cover frame:** the close-up of Piko gloating (6.6 s).
+
+## P04 · Domino Day (about 11.5 s) — format test: "satisfying" chain reaction + gag
+
+- **YouTube Shorts title:** 42 dominoes and one tiny hop 🟧
+- **Description:**
+  The button missed every domino. Piko was so happy he jumped.
+  Zop and Piko: two friends, zero words. What should fall from the sky next?
+
+  "Fluffing a Duck" Kevin MacLeod (incompetech.com)
+  Licensed under Creative Commons: By Attribution 4.0 License
+  http://creativecommons.org/licenses/by/4.0/
+
+  #zoppiko #animation #cartoon #dominoes #satisfying #shorts
+- **TikTok / Instagram caption:** It missed every single domino 😮‍💨 …then he jumped.
+  Music: "Fluffing a Duck" Kevin MacLeod (incompetech.com), CC BY 4.0 · #zoppiko #animation #dominoes #satisfying
+- **Cover frame:** the high shot with the wave halfway through the line.
