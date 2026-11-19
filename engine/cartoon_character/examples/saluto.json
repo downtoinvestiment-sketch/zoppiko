@@ -1,0 +1,34 @@
+{
+  "descrizione": "Ciuffo entra, saluta Bea, raccoglie la palla e la lancia davanti a lei; Bea si sorprende e balla. Esempio del formato JSON.",
+  "render": {"resolution": [540, 960], "samples": 8},
+  "stage": {"color": "#E9E2D6", "ambient": 0.30},
+  "camera": {"location": [0.45, -4.3, 0.95], "target": [0.45, 0.0, 0.55], "lens": 40},
+  "props": [
+    {"name": "palla", "type": "sphere", "radius": 0.06, "location": [0.0, -0.6, 0.06], "color": "#E63946"}
+  ],
+  "characters": [
+    {"name": "Ciuffo", "variant": "default", "location": [-1.2, 0.2], "facing": 60,
+     "actions": [
+       {"play": "idle", "duration": 0.6},
+       {"walk_to": [-0.05, -0.39]},
+       {"look_at": "Bea", "duration": 1.6},
+       {"play": "wave"},
+       {"expression": "happy", "duration": 2.0},
+       {"say": "Ciao Bea! Guarda qui!", "duration": 1.4},
+       {"pick_up": "palla"},
+       {"throw": [0.84, -0.85, 0.0]},
+       {"play": "celebrate"},
+       {"wait": 0.6}
+     ]},
+    {"name": "Bea", "variant": "blu", "location": [1.0, -0.2], "facing": -70,
+     "actions": [
+       {"play": "idle", "duration": 2.4},
+       {"look_at": "Ciuffo"},
+       {"play": "wave"},
+       {"play": "idle", "duration": 2.6},
+       {"play": "surprise"},
+       {"play": "dance", "duration": 2.4},
+       {"expression": "joy", "duration": 2.4}
+     ]}
+  ]
+}

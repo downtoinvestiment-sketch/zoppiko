@@ -1,0 +1,10 @@
+{
+ "music": {"file": "audio/music/Sneaky_Snitch.mp3", "level": -18, "start": 0.85, "offset": 0.0, "fade_in": 0.4,
+           "mute": [["z1-0.05", "z2+2.0"], ["p1+0.45", "p1+3.85"]], "end": "z3+0.35", "fade": 0.15},
+ "rules": true,
+ "cues": [
+  {"t": "p1+2.35", "sound": "thud_soft", "gain": -5},
+  {"t": "p1+4.0", "sound": "giggle", "gain": -9, "length": 1.4, "fade_out": 0.3}
+ ],
+ "credits": "\"Sneaky Snitch\" Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/"
+}

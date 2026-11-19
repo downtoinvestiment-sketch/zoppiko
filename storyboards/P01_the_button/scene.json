@@ -1,0 +1,621 @@
+{
+ "name": "P01_the_button",
+ "title": "The Button",
+ "logline": "A red button falls from the sky. Zop presses it twice: nothing. Piko presses it properly, and a giant beach ball lands on his head.",
+ "render": {
+  "resolution": [
+   1080,
+   1920
+  ],
+  "samples": 6
+ },
+ "stage": {
+  "horizon": "#FFDDB0",
+  "zenith": "#6FB1FF",
+  "sky_strength": 2.4,
+  "ambient": 0.55,
+  "ambient_color": "#CFE0FF"
+ },
+ "light": {
+  "sun": 3.2,
+  "azimuth": -38,
+  "elevation": 48,
+  "rim": 180
+ },
+ "camera": {
+  "shots": [
+   {
+    "location": [
+     0.0,
+     -4.0,
+     0.88
+    ],
+    "target": [
+     0.0,
+     0.0,
+     0.72
+    ],
+    "lens": 48,
+    "t": 0
+   },
+   {
+    "t": "p1+3.9",
+    "location": [
+     -0.24,
+     -1.5,
+     0.86
+    ],
+    "target": [
+     -0.42,
+     0.0,
+     0.8
+    ],
+    "lens": 50
+   },
+   {
+    "location": [
+     0.0,
+     -4.0,
+     0.88
+    ],
+    "target": [
+     0.0,
+     0.0,
+     0.72
+    ],
+    "lens": 48,
+    "t": "p1+5.1"
+   }
+  ],
+  "shakes": [
+   {
+    "t": 0.52,
+    "amount": 0.012,
+    "dur": 0.25
+   },
+   {
+    "t": "p1+1.58",
+    "amount": 0.035,
+    "dur": 0.4
+   }
+  ]
+ },
+ "props": [
+  {
+   "name": "button",
+   "type": "button",
+   "location": [
+    0.0,
+    -0.15,
+    1.9
+   ],
+   "motion": [
+    {
+     "t": 0.0,
+     "drop": {
+      "to": [
+       0.0,
+       -0.15,
+       0.0
+      ],
+      "h": 1.9,
+      "bounce": 0.06,
+      "bounces": 2,
+      "squash": 0.3,
+      "rot": [
+       0,
+       0,
+       0
+      ],
+      "spin": [
+       -140,
+       0,
+       60
+      ],
+      "sound": "thud_metal",
+      "fall_sound": "whistle_short"
+     }
+    }
+   ],
+   "cap": 0.17
+  },
+  {
+   "name": "ball",
+   "type": "beachball",
+   "radius": 0.3,
+   "location": [
+    0.4,
+    -0.02,
+    12.0
+   ],
+   "hidden": true,
+   "motion": [
+    {
+     "t": "p1+0.45",
+     "show": true
+    },
+    {
+     "t": "p1+0.45",
+     "drop": {
+      "to": [
+       0.4,
+       -0.02,
+       0.98
+      ],
+      "h": 9.0,
+      "bounces": 0,
+      "squash": 0.35,
+      "sound": "bonk",
+      "fall_sound": "whistle_long",
+      "rot": [
+       0,
+       0,
+       0
+      ],
+      "spin": [
+       0,
+       0,
+       120
+      ]
+     }
+    },
+    {
+     "t": "p1+1.60",
+     "ballistic": {
+      "v": [
+       1.7,
+       0.9,
+       3.4
+      ],
+      "g": 12.0,
+      "spin": [
+       0,
+       480,
+       120
+      ]
+     }
+    },
+    {
+     "t": "p1+3.2",
+     "hide": true
+    }
+   ]
+  },
+  {
+   "name": "ball2",
+   "type": "beachball",
+   "radius": 0.3,
+   "colors": [
+    "teal",
+    "white",
+    "coral",
+    "white",
+    "yellow",
+    "white"
+   ],
+   "location": [
+    0.42,
+    0.0,
+    12.0
+   ],
+   "hidden": true,
+   "motion": [
+    {
+     "t": "z3+0.35",
+     "show": true
+    },
+    {
+     "t": "z3+0.35",
+     "fly": {
+      "from": [
+       0.42,
+       0.0,
+       3.5
+      ],
+      "to": [
+       0.42,
+       0.0,
+       1.22
+      ],
+      "dur": 1.05,
+      "arc": 0.0,
+      "land": false,
+      "spin": [
+       0,
+       0,
+       90
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "characters": [
+  {
+   "name": "Piko",
+   "location": [
+    0.42,
+    0.0
+   ],
+   "facing": -20,
+   "squash": [
+    {
+     "t": "p1+1.58",
+     "pivot": [
+      0.42,
+      0.0
+     ],
+     "amount": 0.22
+    }
+   ],
+   "actions": [
+    {
+     "until": 0.55
+    },
+    {
+     "play": "surprise"
+    },
+    {
+     "expression": "surprised",
+     "at": 0.55,
+     "duration": 1.3
+    },
+    {
+     "look_at": [
+      0.0,
+      -0.15,
+      0.5
+     ],
+     "at": 0.6,
+     "duration": 1.4
+    },
+    {
+     "look_at": "Zop",
+     "at": 2.0,
+     "duration": 0.7
+    },
+    {
+     "expression": "confused",
+     "at": 2.0,
+     "duration": 0.7
+    },
+    {
+     "look_at": [
+      0.0,
+      -0.15,
+      0.5
+     ],
+     "at": 2.7,
+     "duration": 2.2
+    },
+    {
+     "expression": "thinking",
+     "at": 2.8,
+     "duration": 2.1
+    },
+    {
+     "until": 4.95
+    },
+    {
+     "play": "facepalm"
+    },
+    {
+     "expression": "smug",
+     "at": 7.6,
+     "duration": 1.6
+    },
+    {
+     "look_at": "camera",
+     "at": 7.6,
+     "duration": 0.5
+    },
+    {
+     "until": 8.1
+    },
+    {
+     "press": "button",
+     "mark": "p1"
+    },
+    {
+     "look_at": [
+      0.0,
+      -0.15,
+      0.5
+     ],
+     "at": "p1-0.3",
+     "duration": 0.6
+    },
+    {
+     "look_at": "camera",
+     "at": "p1+0.35",
+     "duration": 0.8
+    },
+    {
+     "look_at": [
+      0.4,
+      -0.3,
+      6.0
+     ],
+     "at": "p1+1.15",
+     "duration": 0.5
+    },
+    {
+     "expression": "scared",
+     "at": "p1+1.2",
+     "duration": 0.4
+    },
+    {
+     "until": "p1+1.52"
+    },
+    {
+     "play": "fall"
+    },
+    {
+     "expression": "dizzy",
+     "at": "p1+1.75",
+     "duration": 2.8
+    },
+    {
+     "until": "p1+4.3"
+    },
+    {
+     "play": "get_up"
+    },
+    {
+     "expression": "angry",
+     "at": "p1+5.4",
+     "duration": 1.3
+    },
+    {
+     "look_at": "Zop",
+     "at": "p1+5.4",
+     "duration": 0.9
+    },
+    {
+     "look_at": [
+      0.4,
+      -0.3,
+      6.0
+     ],
+     "at": "p1+6.35",
+     "duration": 1.5
+    },
+    {
+     "expression": "shocked",
+     "at": "p1+6.4",
+     "duration": 1.5
+    },
+    {
+     "wait": 1.2
+    }
+   ]
+  },
+  {
+   "name": "Zop",
+   "location": [
+    -0.42,
+    0.0
+   ],
+   "facing": 20,
+   "actions": [
+    {
+     "until": 0.55
+    },
+    {
+     "play": "surprise"
+    },
+    {
+     "expression": "surprised",
+     "at": 0.55,
+     "duration": 1.3
+    },
+    {
+     "look_at": [
+      0.0,
+      -0.15,
+      0.5
+     ],
+     "at": 0.6,
+     "duration": 1.4
+    },
+    {
+     "look_at": "Piko",
+     "at": 2.0,
+     "duration": 0.7
+    },
+    {
+     "expression": "confused",
+     "at": 2.0,
+     "duration": 0.7
+    },
+    {
+     "look_at": [
+      0.0,
+      -0.15,
+      0.5
+     ],
+     "at": 2.7,
+     "duration": 3.5
+    },
+    {
+     "expression": "joy",
+     "at": 2.7,
+     "duration": 0.6
+    },
+    {
+     "until": 2.8
+    },
+    {
+     "press": "button",
+     "mark": "z1"
+    },
+    {
+     "expression": "determined",
+     "at": 2.9,
+     "duration": 0.5
+    },
+    {
+     "expression": "confused",
+     "at": "z1+0.5",
+     "duration": 1.0
+    },
+    {
+     "press": "button",
+     "mark": "z2"
+    },
+    {
+     "expression": "angry",
+     "at": "z2-0.3",
+     "duration": 0.9
+    },
+    {
+     "expression": "sad",
+     "at": "z2+0.8",
+     "duration": 3.0
+    },
+    {
+     "play": "sadness"
+    },
+    {
+     "until": "p1+1.62"
+    },
+    {
+     "play": "exaggerated_reaction"
+    },
+    {
+     "expression": "shocked",
+     "at": "p1+1.62",
+     "duration": 1.6
+    },
+    {
+     "look_at": [
+      0.46,
+      0.05,
+      0.4
+     ],
+     "at": "p1+1.7",
+     "duration": 2.1
+    },
+    {
+     "look_at": [
+      -0.24,
+      -1.5,
+      0.86
+     ],
+     "at": "p1+3.95",
+     "duration": 1.1
+    },
+    {
+     "expression": "smug",
+     "at": "p1+4.05",
+     "duration": 1.1
+    },
+    {
+     "until": "p1+5.05"
+    },
+    {
+     "press": "button",
+     "mark": "z3"
+    },
+    {
+     "expression": "joy",
+     "at": "z3-0.3",
+     "duration": 1.0
+    },
+    {
+     "look_at": "camera",
+     "at": "z3+0.6",
+     "duration": 1.2
+    },
+    {
+     "expression": "happy",
+     "at": "z3+0.6",
+     "duration": 1.2
+    },
+    {
+     "wait": 1.0
+    }
+   ]
+  }
+ ],
+ "fx": [
+  {
+   "t": 0.52,
+   "type": "puff",
+   "at": [
+    0.0,
+    -0.17,
+    0.07
+   ],
+   "count": 2,
+   "spread": 0.42,
+   "size": 0.45,
+   "dur": 0.55
+  },
+  {
+   "t": "p1+1.58",
+   "type": "sparkle",
+   "at": [
+    0.4,
+    -0.07,
+    1.0
+   ],
+   "size": 0.8,
+   "dur": 0.3
+  },
+  {
+   "t": "p1+1.58",
+   "type": "burst",
+   "at": [
+    0.4,
+    -0.07,
+    1.02
+   ],
+   "dur": 0.55,
+   "count": 6
+  },
+  {
+   "t": "p1+2.35",
+   "type": "puff",
+   "at": [
+    0.46,
+    -0.02,
+    0.06
+   ],
+   "count": 2,
+   "spread": 0.3,
+   "size": 0.34,
+   "dur": 0.5
+  },
+  {
+   "t": "p1+2.5",
+   "type": "dizzy",
+   "at": [
+    0.46,
+    0.04,
+    0.8
+   ],
+   "dur": 1.8,
+   "count": 3
+  }
+ ],
+ "duration_from": "z3+1.40",
+ "cues": [
+  {
+   "t": "z1+0.25",
+   "sound": "crickets"
+  },
+  {
+   "t": "z2+0.30",
+   "sound": "sad_trombone"
+  },
+  {
+   "t": "p1+2.6",
+   "sound": "boing_far"
+  },
+  {
+   "t": "z3+0.35",
+   "sound": "whistle_long"
+  }
+ ]
+}

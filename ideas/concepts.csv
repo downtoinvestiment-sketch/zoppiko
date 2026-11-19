@@ -1,0 +1,31 @@
+id,title,logline,situation,visual_appeal,clarity,comedy,emotion,shareability,rewatch,ease_of_production,total,status
+C01,The Button,"A red button falls from the sky. Zop presses it twice: nothing. Piko presses it properly and a giant beach ball lands on his head.",The Drop,5,5,4,3,4,4,4,29,pilot 1
+C02,The Last Cookie,"One giant cookie lands between them. Both dive, bonk heads, and it rolls off the Edge while a whole pile lands behind them unseen.",The Contest,4,5,4,4,4,4,3,28,pilot 2
+C03,The Second Peel,"Piko smugly steps over the banana peel Zop dropped, turns to the camera to gloat, and slips on another one.",The Prank,4,5,4,3,4,3,4,27,pilot 3
+C04,Pause,"A remote falls. Piko pauses Zop mid-jump and pulls faces at him; Zop grabs the remote and rewinds Piko's fall.",The Drop,5,4,5,3,5,5,2,29,next: needs a time-remap tool
+C05,Mirror Frame,"An empty frame falls. Piko thinks Zop is his reflection; Zop copies every move until he can't.",The Drop,4,4,5,3,4,5,3,28,idea
+C06,Domino Day,"Piko spends ages lining up dominoes around the Pad. Zop sneezes.",The Fix,4,5,4,3,4,5,3,28,idea
+C07,Photobomb,"Piko sets a self-timer camera for the perfect photo; Zop jumps into every shot.",The Contest,4,5,4,3,5,4,3,28,idea
+C08,Balloon Lift,"Zop grabs a bunch of balloons and floats up; Piko grabs his feet; one pop and both drop.",The Drop,5,5,4,4,4,4,2,28,idea
+C09,Giant Egg,"An egg falls; they guard it all day; it hatches a tiny lilac jelly that bounces on their heads.",The Drop,5,4,3,5,5,4,2,28,idea: introduces Bloop
+C10,Ice Cream Tower,"Zop stacks scoops higher and higher; the tower leans toward Piko.",The Contest,5,5,4,3,4,4,3,28,idea
+C11,The Spring,"A giant spring falls; Zop bounces sky-high and lands on Piko on the third bounce.",The Drop,5,5,4,3,4,4,3,28,idea
+C12,Musical Chair,"One chair falls from the sky; music plays; they circle it; Zop sits first and the chair collapses.",The Contest,4,5,4,3,4,3,4,27,idea
+C13,Hide and Seek,"Piko counts; Zop hides behind a thin pole; Piko walks past him three times.",The Prank,3,5,4,3,4,4,4,27,idea
+C14,Gravity Off,"For five seconds everything on the Pad floats; then gravity comes back.",The Drop,5,4,4,3,5,4,2,27,idea
+C15,Bubble Wrap,"A sheet of bubble wrap falls; popping turns into a dance battle.",The Drop,4,5,3,4,4,4,3,27,idea
+C16,Trick Candles,"Birthday on the Pad: the candles keep relighting and Zop brings a bigger and bigger fan.",The Fix,4,5,4,4,4,3,3,27,idea
+C17,Copycat Jump,"Piko jumps over a box perfectly; Zop copies three times, each worse; the third time he clears it and Piko trips.",The Copycat,4,5,4,3,3,3,4,26,idea
+C18,Rain Cloud,"A little cloud rains only on Zop; he swaps places with Piko; the cloud follows Zop.",The Prank,4,5,4,3,4,3,3,26,idea: introduces Grumble
+C19,Fake Gift,"Zop gives Piko a box; Piko, sure it's a prank, opens it with a long stick; it's a real gift.",The Prank,3,4,3,5,4,3,4,26,idea
+C20,Sleepy Head,"Piko tries to nap; every quiet move Zop makes is louder than the last.",The Fix,3,5,4,3,4,3,4,26,idea
+C21,Paper Plane,"Zop's paper plane always comes back and hits Piko.",The Prank,3,5,4,2,4,4,4,26,idea
+C22,Painting,"Piko paints Zop's portrait; Zop can't stop moving; the portrait becomes modern art.",The Copycat,4,5,4,3,4,3,3,26,idea
+C23,Stuck Jar,"Neither can open a jar; Bloop opens it with one bounce.",The Fix,3,5,4,3,4,3,4,26,idea
+C24,The Hammock,"One hammock, two friends: every way they try, they flip out.",The Contest,4,5,4,3,3,3,3,25,idea
+C25,Snow Day,"First snow on the Pad; their snowman looks exactly like Piko; Piko is offended.",Special day,5,4,3,4,4,3,2,25,idea: winter
+C26,Tug of War,"A rope falls; the winner pulls so hard he flies off the Edge.",The Contest,3,5,4,3,3,3,4,25,idea
+C27,Teleport Box,"A box sends whoever steps in to the other side of the Pad; Zop abuses it, Piko gets stuck halfway.",The Drop,4,4,4,2,4,4,3,25,idea
+C28,The Itch,"Piko can't reach an itch on his back; Zop tries every tool, each more absurd.",The Fix,3,4,4,3,3,3,3,23,idea
+C29,Magnet,"A magnet falls; every falling object now flies to whoever holds it.",The Drop,4,4,4,2,3,3,3,23,idea
+C30,Shadow Puppets,"At sunset Zop makes shadow animals; a huge shadow appears behind them: it's Bloop.",Special day,4,4,3,3,3,3,3,23,idea

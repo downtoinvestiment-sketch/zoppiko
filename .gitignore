@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+renders/*/frames_*/
+renders/*/mix_raw.wav
+engine/cartoon_character/out/
+*.blend1

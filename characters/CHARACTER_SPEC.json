@@ -1,0 +1,75 @@
+{
+ "locked_on": "2026-11-19",
+ "note": "Never change without the author's written approval. Colours are sRGB hex as used by the engine.",
+ "proportions": {
+  "height_heads": 2.8,
+  "head_center_m": [
+   0.0,
+   0.0,
+   0.835
+  ],
+  "head_radii_m": [
+   0.198,
+   0.186,
+   0.186
+  ],
+  "eye_radius_m": 0.066
+ },
+ "Zop": {
+  "variant": "zop",
+  "colors": {
+   "skin": "#FF9466",
+   "skin_dark": "#F0754C",
+   "shirt": "#1C8C8C",
+   "shirt_dark": "#136B6B",
+   "shorts": "#1F2C52",
+   "shoe": "#FFF1DC",
+   "sole": "#1C8C8C",
+   "iris": "#3A2416",
+   "brow": "#3B1F14",
+   "blush": "#FF5E7A",
+   "curl": "#F2753F"
+  },
+  "personality": "the spark: curious, impulsive, optimistic"
+ },
+ "Piko": {
+  "variant": "piko",
+  "colors": {
+   "skin": "#7FB2FF",
+   "skin_dark": "#5C8FE0",
+   "shirt": "#FFB23F",
+   "shirt_dark": "#E09520",
+   "shorts": "#2B2B3A",
+   "shoe": "#FFFFFF",
+   "sole": "#FF6F3C",
+   "iris": "#1D2A4A",
+   "brow": "#1E2440",
+   "blush": "#FF7DA8",
+   "curl": "#6A9CF0"
+  },
+  "personality": "the planner: careful, clever, a little smug"
+ },
+ "antenna": {
+  "question": "calm, curious, thinking, confused",
+  "exclaim": "surprise, shock, joy, idea",
+  "droop": "sad, tired, dizzy"
+ },
+ "expressions": [
+  "neutral",
+  "happy",
+  "joy",
+  "sad",
+  "angry",
+  "surprised",
+  "shocked",
+  "scared",
+  "confused",
+  "thinking",
+  "disgust",
+  "embarrassed",
+  "smug",
+  "determined",
+  "sleepy",
+  "dizzy"
+ ]
+}
