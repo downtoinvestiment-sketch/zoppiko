@@ -242,8 +242,8 @@ ball = {"name": "ball", "type": "beachball", "radius": 0.3, "location": [ZOP[0] 
                    {"t": "cel+%.4f" % BALL_T, "drop": {"to": [ZOP[0] + 0.02, ZOP[1] + 0.02, 0.98], "h": BALL_H, "bounces": 0,
                                                      "squash": 0.35, "sound": "bonk", "fall_sound": "whistle_long",
                                                      "rot": [0, 0, 0], "spin": [0, 0, 120]}},
-                   {"t": "cel+%.4f" % (HIT + 1.0), "ballistic": {"v": [-1.6, 1.1, 3.2], "g": 12.0, "spin": [0, -420, 90]}},
-                   {"t": "cel+%.4f" % (HIT + 2.6), "hide": True}]}
+                   {"t": "cel+%.4f" % (HIT + 0.02), "ballistic": {"v": [-1.9, 1.5, 4.2], "g": 12.0, "spin": [0, -420, 90]}},
+                   {"t": "cel+%.4f" % (HIT + 0.9), "hide": True}]}
 
 WIDE = {"location": [0.0, -1.6, 2.7], "target": [0.0, 0.2, 0.0], "lens": 28}
 MED = {"location": [0.1, -4.2, 0.95], "target": [0.1, -1.1, 0.55], "lens": 40}
@@ -310,7 +310,7 @@ spec = {
        {"until": "cel+%.3f" % (HIT - 0.06)},
        {"play": "fall"},
        {"expression": "dizzy", "at": "cel+%.3f" % (HIT + 0.2), "duration": 2.6},
-       {"wait": 1.2}]}
+       {"until": "cel+%.3f" % (HIT + 2.6), "dizzy": True}]}
   ],
   "fx": [
     {"t": round(LAND, 3), "type": "puff", "at": [BUTTON[0], BUTTON[1], 0.06], "count": 2, "spread": 0.3, "size": 0.32, "dur": 0.5},
@@ -327,3 +327,16 @@ spec['meta'] = dict(press_after_cel=round(PRESS, 3), hit_after_cel=round(HIT, 3)
                     chain_s=round(pressed, 3), button=BUTTON)
 json.dump(spec, open(os.path.join(HERE, 'scene.json'), 'w'), indent=1)
 print('scene.json written:', json.dumps(spec['meta']))
+
+snd = {
+  "music": {"file": "audio/music/Fluffing_a_Duck.mp3", "level": -19, "start": "cel+0.05", "offset": 0.0, "fade_in": 0.25,
+            "mute": [["cel+%.3f" % (PRESS - 0.03), "cel+%.3f" % (HIT + 0.55)]], "fade": 0.12},
+  "rules": True,
+  "cues": [
+    {"t": "cel+%.3f" % (HIT + 0.5), "sound": "giggle", "gain": -10, "length": 1.5, "fade_out": 0.35},
+    {"t": "cel+%.3f" % (HIT + 0.78), "sound": "thud_soft", "gain": -7},
+    {"t": "cel+%.3f" % (HIT + 1.15), "sound": "boing_far"}
+  ],
+  "credits": "\"Fluffing a Duck\" Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/"
+}
+json.dump(snd, open(os.path.join(HERE, 'sound.json'), 'w'), indent=1)

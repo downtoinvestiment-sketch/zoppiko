@@ -7,8 +7,8 @@
   "fade_in": 0.25,
   "mute": [
    [
-    "cel+5.172",
-    "cel+7.136"
+    "cel+5.830",
+    "cel+7.794"
    ]
   ],
   "fade": 0.12
@@ -16,16 +16,20 @@
  "rules": true,
  "cues": [
   {
-   "t": "cel+7.086",
+   "t": "cel+7.744",
    "sound": "giggle",
    "gain": -10,
    "length": 1.5,
    "fade_out": 0.35
   },
   {
-   "t": "cel+7.366",
+   "t": "cel+8.024",
    "sound": "thud_soft",
    "gain": -7
+  },
+  {
+   "t": "cel+8.394",
+   "sound": "boing_far"
   }
  ],
  "credits": "\"Fluffing a Duck\" Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/"
