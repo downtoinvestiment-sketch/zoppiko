@@ -1,0 +1,560 @@
+{
+ "name": "P03_the_second_peel",
+ "fps": 24,
+ "frames": 399,
+ "duration": 16.625,
+ "marks": {
+  "gloat": 6.535333333333334,
+  "step": 11.481788429662684,
+  "slip": 11.231788429662684
+ },
+ "events": [
+  {
+   "t": 0.0,
+   "kind": "fall_start",
+   "dur": 0.521,
+   "sound": "whistle_short",
+   "prop": "peel1"
+  },
+  {
+   "t": 0.0,
+   "end": 1.1,
+   "kind": "action",
+   "char": "Piko",
+   "action": "idle"
+  },
+  {
+   "t": 0.0,
+   "end": 1.1,
+   "kind": "action",
+   "char": "Zop",
+   "action": "idle"
+  },
+  {
+   "t": 0.52,
+   "kind": "fx",
+   "fx": "puff"
+  },
+  {
+   "t": 0.521,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "thud",
+   "prop": "peel1"
+  },
+  {
+   "t": 0.672,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "peel1"
+  },
+  {
+   "t": 0.85,
+   "end": 2.25,
+   "kind": "action",
+   "char": "Piko",
+   "action": "surprise"
+  },
+  {
+   "t": 0.85,
+   "end": 2.25,
+   "kind": "action",
+   "char": "Zop",
+   "action": "surprise"
+  },
+  {
+   "t": 2.0,
+   "end": 4.7,
+   "kind": "action",
+   "char": "Zop",
+   "action": "confusion"
+  },
+  {
+   "t": 2.1,
+   "end": 2.4,
+   "kind": "action",
+   "char": "Piko",
+   "action": "idle"
+  },
+  {
+   "t": 2.25,
+   "end": 3.383,
+   "kind": "action",
+   "char": "Piko",
+   "action": "point"
+  },
+  {
+   "t": 3.263,
+   "end": 5.783,
+   "kind": "action",
+   "char": "Piko",
+   "action": "walk"
+  },
+  {
+   "t": 4.4,
+   "end": 8.685,
+   "kind": "action",
+   "char": "Zop",
+   "action": "idle"
+  },
+  {
+   "t": 5.531,
+   "end": 6.785,
+   "kind": "action",
+   "char": "Piko",
+   "action": "stop"
+  },
+  {
+   "t": 6.535,
+   "end": 8.151,
+   "kind": "action",
+   "char": "Piko",
+   "action": "celebrate"
+  },
+  {
+   "t": 6.535333333333334,
+   "kind": "cut"
+  },
+  {
+   "t": 7.835333333333334,
+   "kind": "cut"
+  },
+  {
+   "t": 7.851,
+   "end": 8.985,
+   "kind": "action",
+   "char": "Piko",
+   "action": "idle"
+  },
+  {
+   "t": 7.885,
+   "kind": "fall_start",
+   "dur": 0.586,
+   "sound": "none",
+   "prop": "peel2"
+  },
+  {
+   "t": 8.435,
+   "end": 10.135,
+   "kind": "action",
+   "char": "Zop",
+   "action": "point"
+  },
+  {
+   "t": 8.471,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "tap",
+   "prop": "peel2"
+  },
+  {
+   "t": 8.622,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "peel2"
+  },
+  {
+   "t": 8.735,
+   "end": 9.76,
+   "kind": "action",
+   "char": "Piko",
+   "action": "turn"
+  },
+  {
+   "t": 9.64,
+   "end": 10.48,
+   "kind": "action",
+   "char": "Piko",
+   "action": "walk"
+  },
+  {
+   "t": 9.835,
+   "end": 12.682,
+   "kind": "action",
+   "char": "Zop",
+   "action": "idle"
+  },
+  {
+   "t": 10.228,
+   "end": 11.482,
+   "kind": "action",
+   "char": "Piko",
+   "action": "stop"
+  },
+  {
+   "t": 11.231788429662684,
+   "sound": "woosh",
+   "kind": "cue"
+  },
+  {
+   "t": 11.232,
+   "end": 13.532,
+   "kind": "action",
+   "char": "Piko",
+   "action": "slip"
+  },
+  {
+   "t": 12.181788429662683,
+   "sound": "thud_soft",
+   "kind": "cue"
+  },
+  {
+   "t": 12.182,
+   "kind": "fx",
+   "fx": "puff"
+  },
+  {
+   "t": 12.182,
+   "kind": "fx",
+   "fx": "burst"
+  },
+  {
+   "t": 12.232,
+   "kind": "land",
+   "strength": 0.6,
+   "sound": "pop",
+   "prop": "peel2"
+  },
+  {
+   "t": 12.432,
+   "end": 14.632,
+   "kind": "action",
+   "char": "Zop",
+   "action": "happiness"
+  },
+  {
+   "t": 12.481788429662684,
+   "sound": "giggle",
+   "kind": "cue"
+  },
+  {
+   "t": 13.232,
+   "end": 14.582,
+   "kind": "action",
+   "char": "Piko",
+   "action": "floor_idle"
+  },
+  {
+   "t": 14.131788429662684,
+   "sound": "whistle_long",
+   "kind": "cue"
+  },
+  {
+   "t": 14.232,
+   "kind": "fall_start",
+   "dur": 0.666,
+   "sound": "none",
+   "prop": "rain00"
+  },
+  {
+   "t": 14.282,
+   "end": 15.782,
+   "kind": "action",
+   "char": "Piko",
+   "action": "idle"
+  },
+  {
+   "t": 14.352,
+   "kind": "fall_start",
+   "dur": 0.614,
+   "sound": "none",
+   "prop": "rain01"
+  },
+  {
+   "t": 14.382,
+   "end": 17.082,
+   "kind": "action",
+   "char": "Zop",
+   "action": "fear"
+  },
+  {
+   "t": 14.452,
+   "kind": "fall_start",
+   "dur": 0.628,
+   "sound": "none",
+   "prop": "rain02"
+  },
+  {
+   "t": 14.552,
+   "kind": "fall_start",
+   "dur": 0.675,
+   "sound": "none",
+   "prop": "rain03"
+  },
+  {
+   "t": 14.602,
+   "kind": "fall_start",
+   "dur": 0.643,
+   "sound": "none",
+   "prop": "rain04"
+  },
+  {
+   "t": 14.682,
+   "kind": "fall_start",
+   "dur": 0.64,
+   "sound": "none",
+   "prop": "rain05"
+  },
+  {
+   "t": 14.782,
+   "kind": "fall_start",
+   "dur": 0.706,
+   "sound": "none",
+   "prop": "rain06"
+  },
+  {
+   "t": 14.882,
+   "kind": "fall_start",
+   "dur": 0.612,
+   "sound": "none",
+   "prop": "rain07"
+  },
+  {
+   "t": 14.898,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "tap",
+   "prop": "rain00"
+  },
+  {
+   "t": 14.966,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "tap",
+   "prop": "rain01"
+  },
+  {
+   "t": 14.982,
+   "kind": "fall_start",
+   "dur": 0.623,
+   "sound": "none",
+   "prop": "rain08"
+  },
+  {
+   "t": 15.042,
+   "kind": "fall_start",
+   "dur": 0.619,
+   "sound": "none",
+   "prop": "rain09"
+  },
+  {
+   "t": 15.049,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "rain00"
+  },
+  {
+   "t": 15.079,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "tap",
+   "prop": "rain02"
+  },
+  {
+   "t": 15.117,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "rain01"
+  },
+  {
+   "t": 15.152,
+   "kind": "fall_start",
+   "dur": 0.709,
+   "sound": "none",
+   "prop": "rain10"
+  },
+  {
+   "t": 15.222,
+   "kind": "fall_start",
+   "dur": 0.674,
+   "sound": "none",
+   "prop": "rain11"
+  },
+  {
+   "t": 15.227,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "tap",
+   "prop": "rain03"
+  },
+  {
+   "t": 15.231,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "rain02"
+  },
+  {
+   "t": 15.244,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "tap",
+   "prop": "rain04"
+  },
+  {
+   "t": 15.312,
+   "kind": "fall_start",
+   "dur": 0.671,
+   "sound": "none",
+   "prop": "rain12"
+  },
+  {
+   "t": 15.322,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "tap",
+   "prop": "rain05"
+  },
+  {
+   "t": 15.378,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "rain03"
+  },
+  {
+   "t": 15.396,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "rain04"
+  },
+  {
+   "t": 15.452,
+   "kind": "fall_start",
+   "dur": 0.717,
+   "sound": "none",
+   "prop": "rain13"
+  },
+  {
+   "t": 15.473,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "rain05"
+  },
+  {
+   "t": 15.488,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "tap",
+   "prop": "rain06"
+  },
+  {
+   "t": 15.494,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "tap",
+   "prop": "rain07"
+  },
+  {
+   "t": 15.605,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "tap",
+   "prop": "rain08"
+  },
+  {
+   "t": 15.639,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "rain06"
+  },
+  {
+   "t": 15.645,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "rain07"
+  },
+  {
+   "t": 15.661,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "tap",
+   "prop": "rain09"
+  },
+  {
+   "t": 15.756,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "rain08"
+  },
+  {
+   "t": 15.812,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "rain09"
+  },
+  {
+   "t": 15.861,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "tap",
+   "prop": "rain10"
+  },
+  {
+   "t": 15.896,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "tap",
+   "prop": "rain11"
+  },
+  {
+   "t": 15.983,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "tap",
+   "prop": "rain12"
+  },
+  {
+   "t": 16.012,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "rain10"
+  },
+  {
+   "t": 16.047,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "rain11"
+  },
+  {
+   "t": 16.134,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "rain12"
+  },
+  {
+   "t": 16.169,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "tap",
+   "prop": "rain13"
+  },
+  {
+   "t": 16.32,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "rain13"
+  },
+  {
+   "t": 16.782,
+   "end": 17.782,
+   "kind": "action",
+   "char": "Zop",
+   "action": "idle"
+  }
+ ]
+}

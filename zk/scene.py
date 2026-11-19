@@ -29,6 +29,19 @@ from cartoon_character import config as C                     # noqa: E402
 from cartoon_character.automation import scene as S           # noqa: E402
 from cartoon_character.automation import scene_json as SJ     # noqa: E402
 from cartoon_character.automation.controller import Character  # noqa: E402
+from cartoon_character.animation import motion_library as ML  # noqa: E402
+
+
+def floor_idle(ctx, duration=1.0, dizzy=True):
+    """ZOPPIKO extra motion: stays sitting on the floor (after a fall), head swaying if dazed."""
+    m = ML.Motion('floor_idle', duration, 'comedy', start='floor', end='floor', description='sits on the floor, dazed')
+    ML._floor_pose(m, 0.0, ctx, head=(5, 0, 0))
+    n = max(2, int(duration / 0.2))
+    for k in range(n + 1):
+        t = duration * k / n; ang = k * 1.6
+        if dizzy:
+            m.pose(t, {'head': (6 + 7 * math.sin(ang), 8 * math.cos(ang), 7 * math.sin(ang + 0.6)), 'neck': (3, 3 * math.cos(ang), 0)})
+    return m
 
 FPS = C.FPS
 CHAR_VARIANT = {'Zop': 'zop', 'Piko': 'piko'}
@@ -89,6 +102,62 @@ def empty(name, coll, loc=(0, 0, 0), parent=None):
     if parent is not None:
         e.parent = parent
     return e
+
+
+PT_LIBRARY = '/home/claude/pippo_assets'
+
+
+def library():
+    """the shared asset library (Pippo e Tumbo kit: Poly Haven, ambientCG, Kenney; CC0)."""
+    if PT_LIBRARY not in sys.path:
+        sys.path.insert(0, PT_LIBRARY)
+    import pt_assets
+    return pt_assets
+
+
+def sky_photo(sc, path, strength=1.8, rotation=0.0, ambient=0.55, amb_color='#CFE0FF'):
+    """the camera sees a real sky photo (equirectangular HDRI); the characters are lit by the ZOPPIKO daylight,
+    so they look the same in every episode whatever the sky."""
+    w = bpy.data.worlds.new('ZK_SkyPhoto'); sc.world = w; w.use_nodes = True
+    nt = w.node_tree; N = nt.nodes; L = nt.links
+    for n in list(N):
+        N.remove(n)
+    out = N.new('ShaderNodeOutputWorld'); tc = N.new('ShaderNodeTexCoord'); mp = N.new('ShaderNodeMapping')
+    mp.inputs['Rotation'].default_value[2] = math.radians(rotation)
+    env = N.new('ShaderNodeTexEnvironment'); env.image = bpy.data.images.load(path, check_existing=True)
+    bg = N.new('ShaderNodeBackground'); bg.inputs['Strength'].default_value = strength
+    amb = N.new('ShaderNodeBackground'); amb.inputs['Strength'].default_value = ambient
+    amb.inputs['Color'].default_value = (*lin(amb_color), 1)
+    lp = N.new('ShaderNodeLightPath'); mix = N.new('ShaderNodeMixShader')
+    L.new(tc.outputs['Generated'], mp.inputs['Vector']); L.new(mp.outputs['Vector'], env.inputs['Vector'])
+    hsv = N.new('ShaderNodeHueSaturation'); hsv.inputs['Saturation'].default_value = 1.3
+    L.new(env.outputs['Color'], hsv.inputs['Color']); L.new(hsv.outputs['Color'], bg.inputs['Color'])
+    L.new(lp.outputs['Is Camera Ray'], mix.inputs['Fac'])
+    L.new(amb.outputs['Background'], mix.inputs[1]); L.new(bg.outputs['Background'], mix.inputs[2])
+    L.new(mix.outputs['Shader'], out.inputs['Surface'])
+    return w
+
+
+def hdri_rotation(A, aid, sun_azimuth=-38.0):
+    """rotation (degrees) that puts the brightest point of the sky photo (the sun) at the wanted azimuth:
+    0 = behind the camera, negative = front left (same convention as daylight())."""
+    v = A.scarica(aid)
+    path = A.percorso(v['file_1k']) if v.get('file_1k') else None
+    if not path or not os.path.exists(path):
+        return 0.0
+    import numpy as np
+    img = bpy.data.images.load(path, check_existing=True)
+    w, h = img.size
+    px = np.empty(w * h * 4, dtype=np.float32); img.pixels.foreach_get(px)
+    lum = px.reshape(h, w, 4)[..., :3] @ np.array([0.2126, 0.7152, 0.0722], dtype=np.float32)
+    row, col = np.unravel_index(int(np.argmax(lum)), lum.shape)
+    u = (col + 0.5) / w
+    phi_img = math.pi - 2 * math.pi * u                      # Blender equirectangular: u = (pi - atan2(y, x)) / 2pi
+    az = math.radians(sun_azimuth)
+    phi_want = math.atan2(-math.cos(az), math.sin(az))       # direction from the subject toward the sun
+    rot = math.degrees(phi_img - phi_want)
+    print('hdri %s: sun at u=%.3f, elevation %.0f deg, rotation %.0f' % (aid, u, ((row + 0.5) / h - 0.5) * 180, rot))
+    return rot
 
 
 # ------------------------------------------------------------------ the Pad and the sky
@@ -433,12 +502,9 @@ class Track:
             pos = d['a'].lerp(d['b'], e)
             dist = (d['b'] - d['a']).length * e
             ang = math.degrees(dist / d['radius'])
-            rr = d['r'].copy()
-            if d['axis'] == 'y':
-                rr.y += ang * (1 if d['b'].x >= d['a'].x else -1)
-            else:
-                rr.x -= ang * (1 if d['b'].y >= d['a'].y else -1)
-            return pos, rr, s
+            dv = d['b'] - d['a']
+            yaw = math.degrees(math.atan2(dv.y, dv.x))
+            return pos, Vector((90.0, -ang, yaw)), s       # standing on its edge, spinning on its axle, facing the path
         return p, r, s
 
 
@@ -507,7 +573,10 @@ def run_char_actions(ch, actions, chars, props, base, ctx):
             tt = resolve(a['until'], marks)
             # the next clip starts one blend before the end of the wait: aim so that it starts exactly at tt
             d = tt - ch.now + a.get('blend', 0.3) + a.get('next_blend', 0.25)
-            if d > 0.04:
+            if d > 0.04 and ch.state == 'floor':           # sitting on the floor: stay down, do not pop up
+                c = ch.tl.add(floor_idle(ch.ctx, d, a.get('dizzy', True)), d, 0.3)
+                ch.log.append(('floor_idle', c.start, c.end))
+            elif d > 0.04:
                 ch.wait(d, blend=a.get('blend', 0.3))
             elif d < -0.08:
                 print('WARNING %s: "until %s" arrives late by %.2f s' % (ch.name, a['until'], -d))
@@ -532,9 +601,11 @@ def run_char_actions(ch, actions, chars, props, base, ctx):
             continue
         if isinstance(a.get('at'), str):
             a['at'] = resolve(a['at'], marks)
-        SJ.run_actions(ch, [{k: v for k, v in a.items() if k != 'mark'}], chars, props, base)
+        SJ.run_actions(ch, [{k: v for k, v in a.items() if k not in ('mark', 'mark_end')}], chars, props, base)
         if 'mark' in a and ch.log:
             marks[a['mark']] = ch.log[-1][1]
+        if 'mark_end' in a and ch.log:
+            marks[a['mark_end']] = ch.log[-1][2]
 
 
 def carriers(chars, spec_chars):
@@ -604,7 +675,8 @@ def daylight(coll, subject=(0, 0, 0.6), camera=(0, -4, 0.9), sun=3.2, azimuth=-3
     """ZOPPIKO daylight: a warm sun from the front side with crisp soft-edged shadows, the sky as fill
     (world colour), and a cool rim light behind the characters to separate them from the background."""
     s = Vector(subject); c = Vector(camera)
-    sun_d = bpy.data.lights.new('ZK_Sun', 'SUN'); sun_d.energy = sun; sun_d.color = (1.0, 0.93, 0.82)
+    so = None
+    sun_d = bpy.data.lights.new('ZK_Sun', 'SUN'); sun_d.energy = max(sun, 0.0); sun_d.color = (1.0, 0.93, 0.82)
     sun_d.angle = math.radians(3.0)
     try:
         sun_d.shadow_maximum_resolution = 0.01
@@ -627,12 +699,37 @@ def build(spec, base):
     sc = S.reset()
     st = bpy.data.collections.new('ZK_Stage'); sc.collection.children.link(st)
     stg = spec.get('stage', {})
-    sky_world(sc, stg.get('horizon', '#FFE6C4'), stg.get('zenith', '#8CC4FF'), stg.get('ambient', 0.55),
-              stg.get('ambient_color', '#CFE0FF'), stg.get('sky_strength', 1.8))
-    pad(st, stg.get('radius', 3.2), stg.get('grass', 'grass'), stg.get('soil', 'soil'))
+    hd = stg.get('hdri')
+    if hd:                                                   # a real sky photo (Poly Haven / ambientCG, CC0) lights the scene
+        A = library()
+        if hd.get('lighting'):                               # the photo also lights the scene (its own sun)
+            rot = hd.get('rotation')
+            if rot is None:
+                rot = hdri_rotation(A, hd['id'], hd.get('sun_azimuth', -38.0))
+            A.cielo(hd['id'], forza=hd.get('strength', 1.0), rotazione=rot, sfondo=True, scena=sc)
+        else:                                                # backdrop only: the light stays the ZOPPIKO daylight
+            v = A.scarica(hd['id'])
+            sky_photo(sc, A.percorso(v['file_1k']), hd.get('strength', 1.8), hd.get('rotation', 0.0),
+                      stg.get('ambient', 0.55), stg.get('ambient_color', '#CFE0FF'))
+    else:
+        sky_world(sc, stg.get('horizon', '#FFE6C4'), stg.get('zenith', '#8CC4FF'), stg.get('ambient', 0.55),
+                  stg.get('ambient_color', '#CFE0FF'), stg.get('sky_strength', 1.8))
+    pad_ob = pad(st, stg.get('radius', 3.2), stg.get('grass', 'grass'), stg.get('soil', 'soil'))
+    gt = stg.get('grass_texture')
+    if gt:                                                   # real grass (PBR texture, CC0)
+        A = library()
+        m = A.materiale(gt['id'], dimensione=gt.get('size', 0.8), rilievo=gt.get('relief', 1.0), tinta=gt.get('tint'),
+                        ruvidita=2.0)
+        for nd in m.node_tree.nodes:                         # no glitter: grass is matte
+            if nd.type == 'BSDF_PRINCIPLED':
+                try:
+                    nd.inputs['Specular IOR Level'].default_value = 0.12
+                except Exception:
+                    pass
+        pad_ob.data.materials[0] = m
     if stg.get('flowers', True):
         tufts(st, stg.get('radius', 3.2))
-    if stg.get('clouds', True):
+    if stg.get('clouds', not hd):
         clouds(st)
     props = {}; parts = {}; tracks = {}; specs = {}
     for p in spec.get('props', []):

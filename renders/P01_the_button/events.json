@@ -227,7 +227,7 @@
    "end": 13.01,
    "kind": "action",
    "char": "Piko",
-   "action": "idle"
+   "action": "floor_idle"
   },
   {
    "t": 12.36,

@@ -10,9 +10,15 @@
   "samples": 6
  },
  "stage": {
-  "horizon": "#FFDDB0",
-  "zenith": "#6FB1FF",
-  "sky_strength": 2.4,
+  "hdri": {
+   "id": "kloofendal_48d_partly_cloudy_puresky",
+   "strength": 2.0,
+   "rotation": 40
+  },
+  "grass_texture": {
+   "id": "Grass005",
+   "size": 0.9
+  },
   "ambient": 0.55,
   "ambient_color": "#CFE0FF"
  },

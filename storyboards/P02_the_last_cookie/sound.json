@@ -1,0 +1,12 @@
+{
+ "music": {"file": "audio/music/Quirky_Dog.mp3", "level": -18, "start": 0.8, "offset": 0.0, "fade_in": 0.4,
+           "mute": [[2.15, "bonk+0.7"], ["zedge-0.2", "pedge+3.2"]], "end": "pedge+5.3", "fade": 0.15},
+ "rules": true,
+ "cues": [
+  {"t": "pedge-0.55", "sound": "step_grass", "gain": -14}, {"t": "pedge-0.3", "sound": "step_grass", "gain": -14},
+  {"t": "zedge-0.45", "sound": "step_grass", "gain": -15}, {"t": "zedge-0.2", "sound": "step_grass", "gain": -15},
+  {"t": "pedge+3.25", "sound": "surprise_sting", "gain": -10, "length": 1.8, "fade_out": 0.4},
+  {"t": "pedge+3.9", "sound": "giggle", "gain": -10, "length": 1.2, "fade_out": 0.3}
+ ],
+ "credits": "\"Quirky Dog\" Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/"
+}

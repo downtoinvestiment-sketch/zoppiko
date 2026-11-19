@@ -1,0 +1,538 @@
+{
+ "name": "P02_the_last_cookie",
+ "fps": 24,
+ "frames": 405,
+ "duration": 16.875,
+ "marks": {
+  "bonk": 4.9464,
+  "pedge": 11.595335710435737,
+  "zedge": 11.925865936764328
+ },
+ "events": [
+  {
+   "t": 0.0,
+   "kind": "fall_start",
+   "dur": 0.535,
+   "sound": "whistle_short",
+   "prop": "cookie"
+  },
+  {
+   "t": 0.0,
+   "end": 1.1,
+   "kind": "action",
+   "char": "Piko",
+   "action": "idle"
+  },
+  {
+   "t": 0.0,
+   "end": 1.1,
+   "kind": "action",
+   "char": "Zop",
+   "action": "idle"
+  },
+  {
+   "t": 0.53,
+   "kind": "fx",
+   "fx": "puff"
+  },
+  {
+   "t": 0.535,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "thud",
+   "prop": "cookie"
+  },
+  {
+   "t": 0.704,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "cookie"
+  },
+  {
+   "t": 0.85,
+   "end": 2.25,
+   "kind": "action",
+   "char": "Piko",
+   "action": "surprise"
+  },
+  {
+   "t": 0.85,
+   "end": 2.25,
+   "kind": "action",
+   "char": "Zop",
+   "action": "surprise"
+  },
+  {
+   "t": 1.95,
+   "end": 3.65,
+   "kind": "action",
+   "char": "Piko",
+   "action": "idle"
+  },
+  {
+   "t": 1.95,
+   "end": 3.65,
+   "kind": "action",
+   "char": "Zop",
+   "action": "idle"
+  },
+  {
+   "t": 3.53,
+   "end": 4.09,
+   "kind": "action",
+   "char": "Piko",
+   "action": "run"
+  },
+  {
+   "t": 3.53,
+   "end": 4.09,
+   "kind": "action",
+   "char": "Zop",
+   "action": "run"
+  },
+  {
+   "t": 3.984,
+   "end": 4.946,
+   "kind": "action",
+   "char": "Piko",
+   "action": "stop"
+  },
+  {
+   "t": 3.984,
+   "end": 4.946,
+   "kind": "action",
+   "char": "Zop",
+   "action": "stop"
+  },
+  {
+   "t": 4.696,
+   "end": 6.696,
+   "kind": "action",
+   "char": "Piko",
+   "action": "fall"
+  },
+  {
+   "t": 4.696,
+   "end": 6.696,
+   "kind": "action",
+   "char": "Zop",
+   "action": "fall"
+  },
+  {
+   "t": 4.946,
+   "kind": "fx",
+   "fx": "sparkle"
+  },
+  {
+   "t": 4.946,
+   "kind": "fx",
+   "fx": "burst"
+  },
+  {
+   "t": 4.9464,
+   "sound": "bonk",
+   "kind": "cue"
+  },
+  {
+   "t": 5.646,
+   "kind": "fx",
+   "fx": "puff"
+  },
+  {
+   "t": 5.746,
+   "kind": "fx",
+   "fx": "dizzy"
+  },
+  {
+   "t": 5.746,
+   "kind": "fx",
+   "fx": "dizzy"
+  },
+  {
+   "t": 6.346399999999999,
+   "kind": "cut"
+  },
+  {
+   "t": 6.396,
+   "end": 7.096,
+   "kind": "action",
+   "char": "Piko",
+   "action": "floor_idle"
+  },
+  {
+   "t": 6.396,
+   "end": 7.896,
+   "kind": "action",
+   "char": "Zop",
+   "action": "floor_idle"
+  },
+  {
+   "t": 6.846,
+   "end": 8.409,
+   "kind": "action",
+   "char": "Piko",
+   "action": "get_up"
+  },
+  {
+   "t": 7.646,
+   "end": 9.209,
+   "kind": "action",
+   "char": "Zop",
+   "action": "get_up"
+  },
+  {
+   "t": 8.159,
+   "end": 9.037,
+   "kind": "action",
+   "char": "Piko",
+   "action": "turn"
+  },
+  {
+   "t": 8.3464,
+   "sound": "whistle_long",
+   "kind": "cue"
+  },
+  {
+   "t": 8.787,
+   "end": 9.739,
+   "kind": "action",
+   "char": "Piko",
+   "action": "turn"
+  },
+  {
+   "t": 8.959,
+   "end": 10.069,
+   "kind": "action",
+   "char": "Zop",
+   "action": "turn"
+  },
+  {
+   "t": 9.619,
+   "end": 10.739,
+   "kind": "action",
+   "char": "Piko",
+   "action": "run"
+  },
+  {
+   "t": 9.949,
+   "end": 11.069,
+   "kind": "action",
+   "char": "Zop",
+   "action": "run"
+  },
+  {
+   "t": 10.633,
+   "end": 11.595,
+   "kind": "action",
+   "char": "Piko",
+   "action": "stop"
+  },
+  {
+   "t": 10.963,
+   "end": 11.926,
+   "kind": "action",
+   "char": "Zop",
+   "action": "stop"
+  },
+  {
+   "t": 11.345,
+   "end": 14.345,
+   "kind": "action",
+   "char": "Piko",
+   "action": "sadness"
+  },
+  {
+   "t": 11.676,
+   "end": 14.676,
+   "kind": "action",
+   "char": "Zop",
+   "action": "sadness"
+  },
+  {
+   "t": 12.425865936764328,
+   "sound": "sad_trombone",
+   "kind": "cue"
+  },
+  {
+   "t": 12.495,
+   "kind": "fall_start",
+   "dur": 0.586,
+   "sound": "none",
+   "prop": "tower00"
+  },
+  {
+   "t": 12.625,
+   "kind": "fall_start",
+   "dur": 0.586,
+   "sound": "none",
+   "prop": "tower01"
+  },
+  {
+   "t": 12.755,
+   "kind": "fall_start",
+   "dur": 0.586,
+   "sound": "none",
+   "prop": "tower02"
+  },
+  {
+   "t": 12.885,
+   "kind": "fall_start",
+   "dur": 0.586,
+   "sound": "none",
+   "prop": "tower03"
+  },
+  {
+   "t": 13.015,
+   "kind": "fall_start",
+   "dur": 0.586,
+   "sound": "none",
+   "prop": "tower04"
+  },
+  {
+   "t": 13.081,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "tap",
+   "prop": "tower00"
+  },
+  {
+   "t": 13.145,
+   "kind": "fall_start",
+   "dur": 0.586,
+   "sound": "none",
+   "prop": "tower05"
+  },
+  {
+   "t": 13.211,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "tap",
+   "prop": "tower01"
+  },
+  {
+   "t": 13.212,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "tower00"
+  },
+  {
+   "t": 13.275,
+   "kind": "fall_start",
+   "dur": 0.586,
+   "sound": "none",
+   "prop": "tower06"
+  },
+  {
+   "t": 13.341,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "tap",
+   "prop": "tower02"
+  },
+  {
+   "t": 13.342,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "tower01"
+  },
+  {
+   "t": 13.405,
+   "kind": "fall_start",
+   "dur": 0.586,
+   "sound": "none",
+   "prop": "tower07"
+  },
+  {
+   "t": 13.471,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "tap",
+   "prop": "tower03"
+  },
+  {
+   "t": 13.472,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "tower02"
+  },
+  {
+   "t": 13.535,
+   "kind": "fall_start",
+   "dur": 0.586,
+   "sound": "none",
+   "prop": "tower08"
+  },
+  {
+   "t": 13.601,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "tap",
+   "prop": "tower04"
+  },
+  {
+   "t": 13.602,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "tower03"
+  },
+  {
+   "t": 13.665,
+   "kind": "fall_start",
+   "dur": 0.586,
+   "sound": "none",
+   "prop": "tower09"
+  },
+  {
+   "t": 13.731,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "tap",
+   "prop": "tower05"
+  },
+  {
+   "t": 13.732,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "tower04"
+  },
+  {
+   "t": 13.795,
+   "kind": "fall_start",
+   "dur": 0.586,
+   "sound": "none",
+   "prop": "tower10"
+  },
+  {
+   "t": 13.861,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "tap",
+   "prop": "tower06"
+  },
+  {
+   "t": 13.862,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "tower05"
+  },
+  {
+   "t": 13.925,
+   "kind": "fall_start",
+   "dur": 0.586,
+   "sound": "none",
+   "prop": "tower11"
+  },
+  {
+   "t": 13.991,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "tap",
+   "prop": "tower07"
+  },
+  {
+   "t": 13.992,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "tower06"
+  },
+  {
+   "t": 14.045,
+   "end": 16.045,
+   "kind": "action",
+   "char": "Piko",
+   "action": "idle"
+  },
+  {
+   "t": 14.121,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "tap",
+   "prop": "tower08"
+  },
+  {
+   "t": 14.122,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "tower07"
+  },
+  {
+   "t": 14.251,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "tap",
+   "prop": "tower09"
+  },
+  {
+   "t": 14.252,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "tower08"
+  },
+  {
+   "t": 14.381,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "tap",
+   "prop": "tower10"
+  },
+  {
+   "t": 14.382,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "tower09"
+  },
+  {
+   "t": 14.426,
+   "end": 15.317,
+   "kind": "action",
+   "char": "Zop",
+   "action": "turn"
+  },
+  {
+   "t": 14.511,
+   "kind": "land",
+   "strength": 1.0,
+   "sound": "thud",
+   "prop": "tower11"
+  },
+  {
+   "t": 14.512,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "tower10"
+  },
+  {
+   "t": 14.642,
+   "kind": "land",
+   "strength": 0.35,
+   "sound": "tap",
+   "prop": "tower11"
+  },
+  {
+   "t": 15.067,
+   "end": 16.467,
+   "kind": "action",
+   "char": "Zop",
+   "action": "surprise"
+  },
+  {
+   "t": 16.167,
+   "end": 17.367,
+   "kind": "action",
+   "char": "Zop",
+   "action": "idle"
+  }
+ ]
+}
