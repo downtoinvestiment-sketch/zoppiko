@@ -374,6 +374,27 @@ def make_prop(spec, coll):
                 x += ln * 0.5
                 v.co = Vector((x * math.cos(a) - y * math.sin(a), x * math.sin(a) + y * math.cos(a), z + 0.008 + 0.010 * max(0, x / ln - 0.6)))
         mesh_object(name + '_peel', bm, material(name + '_mat', spec.get('color', 'banana'), 0.55), coll, parent=root)
+    elif kind == 'plane':                                    # paper plane, nose along +y, origin at its centre
+        L_ = spec.get('length', 0.30); Wd = spec.get('span', 0.22); Hk = spec.get('keel', 0.05)
+        bm = bmesh.new()
+        nose = bm.verts.new((0, L_ / 2, 0)); tl = bm.verts.new((-Wd / 2, -L_ / 2, 0.018)); tr = bm.verts.new((Wd / 2, -L_ / 2, 0.018))
+        tc = bm.verts.new((0, -L_ / 2, 0)); kb = bm.verts.new((0, -L_ / 2, -Hk)); kn = bm.verts.new((0, L_ * 0.18, -Hk * 0.25))
+        for f in ((nose, tl, tc), (nose, tc, tr), (nose, tc, kb), (nose, kb, kn)):
+            bm.faces.new(f)
+        bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+        root = mesh_object(name, bm, material(name + '_paper', spec.get('color', 'cream'), 0.75), coll)
+        try:
+            root.data.materials[0].use_backface_culling = False
+        except Exception:
+            pass
+        st = bmesh.new()                                     # a coral stripe on each wing
+        for sx in (-1, 1):
+            zw = lambda k: 0.036 * k + 0.0012                # height of the wing at |x| = k * span
+            a = st.verts.new((sx * Wd * 0.20, -L_ * 0.18, zw(0.20))); b = st.verts.new((sx * Wd * 0.30, -L_ * 0.18, zw(0.30)))
+            c = st.verts.new((sx * Wd * 0.38, -L_ * 0.48, zw(0.38))); e = st.verts.new((sx * Wd * 0.27, -L_ * 0.48, zw(0.27)))
+            st.faces.new((a, b, c, e))
+        bmesh.ops.recalc_face_normals(st, faces=st.faces)
+        mesh_object(name + '_stripe', st, material(name + '_stripe_mat', spec.get('stripe', 'coral'), 0.7), coll, parent=root)
     elif kind == 'sphere':
         r = spec.get('radius', 0.08)
         bm = bmesh.new(); _sphere(bm, r, center=(0, 0, r))
@@ -455,6 +476,21 @@ class Track:
                     self.events.append(dict(t=round(t + e['t'], 3), kind='cue', sound=e['sound'], gain=e.get('gain', 0.0),
                                             pitch=e.get('pitch', 0.0), pan=e.get('pan', 0.0)))
                 p, r = tilt_pose(p, keys[-1][1], half, yaw)
+            elif 'path' in seg:                              # flies through points (paper planes, birds): nose along +y
+                d = seg['path']; pts = [Vector(q) for q in d['points']]
+                if d.get('from_here', True):
+                    pts = [p.copy()] + pts
+                samples = catmull(pts, d.get('n', 24))
+                acc = [0.0]
+                for k in range(1, len(samples)):
+                    acc.append(acc[-1] + (samples[k] - samples[k - 1]).length)
+                self.plan.append(('path', t, dict(samples=samples, acc=acc, dur=d.get('dur', 2.0), ease=d.get('ease', 'linear'),
+                                                  bank=d.get('bank', 0.5), pitch=d.get('pitch', 1.0), r=r.copy())))
+                if d.get('land'):
+                    self.events.append(dict(t=round(t + d.get('dur', 2.0), 3), kind='land', strength=d.get('strength', 0.5),
+                                            sound=d.get('sound', 'tap')))
+                p = samples[-1].copy()
+                r = Vector(path_rotation(samples, acc, acc[-1], d.get('bank', 0.5), d.get('pitch', 1.0)))
             elif 'press' in seg:
                 self.events.append(dict(t=round(t, 3), kind='press', sound=seg.get('sound', 'click')))
             elif 'show' in seg or 'hide' in seg:
@@ -532,7 +568,71 @@ class Track:
                 th = a + (b - a) * (t - ta) / max(1e-9, tb - ta)
             pos, rot = tilt_pose(d['base'], th, d['half'], d['yaw'])
             return pos, rot, s
+        if kind == 'path':
+            k = min(1.0, max(0.0, u / d['dur']))
+            if d['ease'] == 'in':
+                k = k * k
+            elif d['ease'] == 'out':
+                k = 1 - (1 - k) ** 2
+            elif d['ease'] == 'inout':
+                k = k * k * (3 - 2 * k)
+            dist = k * d['acc'][-1]
+            return path_point(d['samples'], d['acc'], dist), Vector(path_rotation(d['samples'], d['acc'], dist, d['bank'], d['pitch'])), s
         return p, r, s
+
+
+def catmull(pts, n):
+    """Catmull-Rom curve through the points, n samples per span."""
+    if len(pts) < 2:
+        return [pts[0].copy()]
+    ext = [pts[0] + (pts[0] - pts[1])] + pts + [pts[-1] + (pts[-1] - pts[-2])]
+    out = []
+    for i in range(1, len(ext) - 2):
+        p0, p1, p2, p3 = ext[i - 1], ext[i], ext[i + 1], ext[i + 2]
+        for j in range(n):
+            t = j / n
+            out.append(0.5 * ((2 * p1) + (-p0 + p2) * t + (2 * p0 - 5 * p1 + 4 * p2 - p3) * t * t + (-p0 + 3 * p1 - 3 * p2 + p3) * t ** 3))
+    out.append(pts[-1].copy())
+    return out
+
+
+def path_point(samples, acc, dist):
+    if dist <= 0:
+        return samples[0].copy()
+    if dist >= acc[-1]:
+        return samples[-1].copy()
+    lo, hi = 0, len(acc) - 1
+    while hi - lo > 1:
+        mid = (lo + hi) // 2
+        if acc[mid] <= dist:
+            lo = mid
+        else:
+            hi = mid
+    f = (dist - acc[lo]) / max(1e-9, acc[hi] - acc[lo])
+    return samples[lo].lerp(samples[hi], f)
+
+
+def path_rotation(samples, acc, dist, bank=0.5, pitch=1.0):
+    """Euler degrees with the nose (+y) along the curve, banked into the turns."""
+    e = max(0.02, acc[-1] * 0.01)
+    a = path_point(samples, acc, max(0.0, dist - e)); b = path_point(samples, acc, min(acc[-1], dist + e))
+    f = b - a
+    if f.length < 1e-9:
+        f = Vector((0, 1, 0))
+    f.normalize()
+    c = path_point(samples, acc, min(acc[-1], dist + 3 * e)) - b
+    turn = 0.0
+    if c.length > 1e-9 and f.xy.length > 1e-6:
+        c2 = c.normalized()
+        turn = math.atan2(f.x * c2.y - f.y * c2.x, f.x * c2.x + f.y * c2.y)    # left turn > 0
+    yaw = math.degrees(math.atan2(-f.x, f.y))
+    pit = math.degrees(math.atan2(f.z, max(1e-9, f.xy.length))) * pitch
+    roll = -math.degrees(turn) * 12.0 * bank
+    roll = max(-55.0, min(55.0, roll))
+    from mathutils import Euler as _E, Matrix as _M
+    m = _M.Rotation(math.radians(yaw), 4, 'Z') @ _M.Rotation(math.radians(pit), 4, 'X') @ _M.Rotation(math.radians(roll), 4, 'Y')
+    eu = m.to_euler('XYZ')
+    return (math.degrees(eu.x), math.degrees(eu.y), math.degrees(eu.z))
 
 
 def tilt_pose(base, th, half, yaw):
