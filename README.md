@@ -14,11 +14,12 @@ Dialogue-free 3D slapstick in vertical 15–30 s episodes, for everyone, everywh
 | --- | --- |
 | Characters | locked, procedural rig in `engine/` (31 motions, 16 expressions), references in `characters/references/` |
 | Brand kit | logo, profile picture, YouTube banner, Facebook cover, brand sheet in `brand/kit/` |
-| Social accounts | the author is creating @zoppiko on YouTube, TikTok, Instagram, Facebook |
+| Social accounts | YouTube Zoppiko (@Zoppiko), Facebook page Zoppiko, TikTok @unseenworld (handle change possible from 5 Dec 2026), Instagram zoppiko to sign in on the desktop browser |
 | Concepts | 30 scored in `ideas/concepts.csv` |
-| P01 The Button | storyboard done, final render in progress |
-| P02 The Last Cookie, P03 The Second Peel | to storyboard |
-| Publishing | nothing published; needs the author's approval of the schedule |
+| P01 The Button | final video done and checked: `exports/P01_the_button/` (master H.264, upload HEVC ≤3.7 MB) |
+| P02 The Last Cookie | storyboard done, final render in progress |
+| P03 The Second Peel | storyboard done, render next |
+| Publishing | approved by the author (19 Nov 2026); blocked until the chat allows browser file uploads (auto mode) or the author uploads; texts in `published/drafts.md` |
 
 ## Folders
 

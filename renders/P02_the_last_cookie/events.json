@@ -131,13 +131,25 @@
   },
   {
    "t": 4.9464,
-   "sound": "bonk",
+   "sound": "boing",
+   "kind": "cue"
+  },
+  {
+   "t": 4.966399999999999,
+   "sound": "bonk_birds",
+   "gain": -3,
    "kind": "cue"
   },
   {
    "t": 5.646,
    "kind": "fx",
    "fx": "puff"
+  },
+  {
+   "t": 5.6964,
+   "sound": "thud_soft",
+   "gain": -6,
+   "kind": "cue"
   },
   {
    "t": 5.746,
