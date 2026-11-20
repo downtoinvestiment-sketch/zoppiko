@@ -138,9 +138,9 @@ def music_track(spec, n, marks):
     env[:i0] = 0
     f = int(spec.get('fade', 0.12) * SR)
     for a, b in spec.get('mute', []):
-        a = int(resolve(a, marks) * SR); b = int(resolve(b, marks) * SR)
+        a = min(n, max(0, int(resolve(a, marks) * SR))); b = min(n, max(a, int(resolve(b, marks) * SR)))
         a0 = max(0, a - f); env[a0:a] *= np.linspace(1, 0, a - a0); env[a:b] = 0
-        b1 = min(n, b + f * 3); env[b:b1] *= np.linspace(0, 1, b1 - b)
+        b1 = min(n, b + f * 3); env[b:b1] *= np.linspace(0, 1, b1 - b)   # windows past the end are clipped
     end = spec.get('end')
     if end is not None:
         e = int(resolve(end, marks) * SR); env[e:] = 0
