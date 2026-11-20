@@ -89,3 +89,17 @@ Music credit (CC-BY 4.0) goes in every description or caption, in the form shown
 - **Facebook (Reels, from the Zoppiko page):** description as on YouTube, public.
 - **Instagram (Reels):** caption above; only after the author logs in as zoppiko.
 - After publishing: one line per platform in `registry.csv` (date, platform, episode, url, title, status, approved_by).
+
+## Launch schedule (Italian time; 19:00 = 13:00 New York, 10:00 Los Angeles)
+
+Uploaded in advance and scheduled on each platform, so they go out even when the PC is off.
+
+| Day | Episode | YouTube | TikTok | Facebook |
+| --- | --- | --- | --- | --- |
+| Fri 20 Nov | P01 The Button | 19:00 | 19:00 | 19:00 |
+| Sat 21 Nov | P02 The Last Cookie | 19:00 | 19:00 | 19:00 |
+| Sun 22 Nov | P03 The Second Peel | 19:00 | 19:00 | 19:00 |
+| Mon 23 Nov | P04 Domino Day (format test) | 19:00 | 19:00 | 19:00 |
+
+Checks after each one: 48 h and 7 days (views, average percentage viewed, swipe-away or 3-second skip rate where shown,
+likes, comments, shares, subscribers gained) into `analytics/metrics.csv`; never estimated.
