@@ -250,8 +250,9 @@ MED = {"location": [0.1, -4.2, 0.95], "target": [0.1, -1.1, 0.55], "lens": 40}
 INSERT = {"location": [0.66, -2.3, 0.14], "target": [0.5, -1.12, 0.05], "lens": 35}      # Piko's feet and the first domino
 TOP = {"location": [0.0, -1.3, 4.5], "target": [0.0, 0.3, 0.0], "lens": 38}            # the whole line from above
 TOP_PUSH = dict(TOP, move={"delay": 0.0, "dur": 1.8, "location": [0.2, -0.7, 3.8], "target": [0.3, 0.7, 0.0], "lens": 38})
-END = {"location": [-0.06, -3.6, 0.95], "target": [-0.06, -1.15, 0.62], "lens": 40}
-SIDE = {"location": [1.75, -0.45, 1.0], "target": [-0.05, -1.15, 0.6], "lens": 38}       # their faces while the line falls
+END = {"location": [0.55, 2.45, 1.0], "target": [-0.1, -1.15, 0.65], "lens": 44}         # reverse angle (they face the line)
+REVERSE = {"location": [0.9, 2.6, 1.0], "target": [0.0, -1.15, 0.55], "lens": 42}       # from behind the line: their faces
+REV_EYE = [0.9, 2.6, 1.0]                   # where they look when they look at us
 
 spec = {
   "name": "P04_domino_day", "title": "Domino Day",
@@ -260,8 +261,8 @@ spec = {
   "stage": {"hdri": {"id": "kloofendal_48d_partly_cloudy_puresky", "strength": 2.0, "rotation": 40, "haze": True},
             "grass_texture": {"id": "Grass005", "size": 0.9}, "ambient": 0.55, "ambient_color": "#CFE0FF"},
   "light": {"sun": 3.2, "azimuth": -38, "elevation": 48, "rim": 180},
-  "camera": {"shots": [dict(WIDE, t=0), dict(MED, t=1.35), dict(INSERT, t="cel+0.40"), dict(TOP, t="cel+1.30"),
-                       dict(MED, t="cel+3.40"), dict(TOP_PUSH, t="cel+4.40"), dict(END, t="cel+%.3f" % (PRESS + 0.35))],
+  "camera": {"shots": [dict(WIDE, t=0), dict(REVERSE, t=1.35), dict(INSERT, t="cel+0.40"), dict(TOP, t="cel+1.30"),
+                       dict(REVERSE, t="cel+3.40"), dict(TOP_PUSH, t="cel+4.40"), dict(END, t="cel+%.3f" % (PRESS + 0.35))],
              "shakes": [{"t": round(LAND, 3), "amount": 0.012, "dur": 0.25},
                         {"t": "cel+%.3f" % HIT, "amount": 0.03, "dur": 0.35}]},
   "props": [button, ball] + props,
@@ -270,20 +271,21 @@ spec = {
      "actions": [
        {"expression": "smug", "at": 0.0, "duration": 0.5},
        {"look_at": [0.0, 0.2, 0.1], "at": 0.0, "duration": 0.45},
-       {"until": 0.45}, {"play": "shock", "speed": 1.3},
+       {"until": 0.42}, {"turn": -170},
+       {"play": "shock", "speed": 1.8},
        {"look_at": [BUTTON[0], BUTTON[1], 1.4], "at": 0.42, "duration": 0.4},
        {"look_at": [BUTTON[0], BUTTON[1], 0.2], "at": 0.82, "duration": 1.2},
        {"expression": "scared", "at": 0.45, "duration": 1.3},
        {"expression": "happy", "at": 1.85, "duration": 0.4},
-       {"look_at": "camera", "at": 2.05, "duration": 0.35},
+       {"look_at": REV_EYE, "at": 2.05, "duration": 0.35},
        {"until": 2.35},
        {"play": "celebrate", "mark": "cel"},
-       {"look_at": "camera", "at": "cel", "duration": 1.6},
+       {"look_at": REV_EYE, "at": "cel", "duration": 1.6},
        {"look_at": [0.6, -0.8, 0.1], "at": "cel+1.7", "duration": 0.5},
        {"expression": "shocked", "at": "cel+1.75", "duration": 1.0},
        {"play": "fear"},
        {"look_at": [0.9, 0.4, 0.2], "at": "cel+2.6", "duration": 0.65},
-       {"look_at": [0.1, -4.2, 1.0], "at": "cel+3.3", "duration": 1.25},
+       {"look_at": REV_EYE, "at": "cel+3.3", "duration": 1.25},
        {"expression": "sad", "at": "cel+2.8", "duration": 1.6},
        {"until": "cel+%.3f" % (PRESS - 0.1)},
        {"look_at": [BUTTON[0], BUTTON[1], 0.3], "at": "cel+%.3f" % (PRESS - 0.2), "duration": 0.5},
@@ -293,13 +295,14 @@ spec = {
        {"until": "cel+%.3f" % (HIT + 0.35)},
        {"play": "happiness"},
        {"expression": "joy", "at": "cel+%.3f" % (HIT + 0.3), "duration": 1.6},
-       {"look_at": "camera", "at": "cel+%.3f" % (HIT + 1.3), "duration": 0.9},
+       {"look_at": REV_EYE, "at": "cel+%.3f" % (HIT + 1.3), "duration": 0.9},
        {"wait": 0.6}]},
     {"name": "Zop", "location": list(ZOP), "facing": 20,
      "squash": [{"t": "cel+%.3f" % HIT, "pivot": list(ZOP), "amount": 0.22}],
      "actions": [
        {"look_at": "Piko", "at": 0.0, "duration": 0.45},
-       {"until": 0.5}, {"play": "surprise"},
+       {"until": 0.44}, {"turn": 135},
+       {"play": "surprise"},
        {"expression": "surprised", "at": 0.5, "duration": 1.2},
        {"look_at": [BUTTON[0], BUTTON[1], 1.4], "at": 0.47, "duration": 0.4},
        {"look_at": [BUTTON[0], BUTTON[1], 0.2], "at": 0.87, "duration": 1.3},
@@ -310,7 +313,7 @@ spec = {
        {"until": "cel+1.2"},
        {"play": "dance", "duration": round(HIT - 0.06 - 1.2 - 0.25, 3)},
        {"look_at": [0.0, 0.2, 0.1], "at": "cel+1.3", "duration": 2.2},
-       {"look_at": "camera", "at": "cel+%.3f" % (PRESS - 0.6), "duration": 1.2},
+       {"look_at": REV_EYE, "at": "cel+%.3f" % (PRESS - 0.6), "duration": 1.2},
        {"until": "cel+%.3f" % (HIT - 0.06)},
        {"play": "fall"},
        {"expression": "dizzy", "at": "cel+%.3f" % (HIT + 0.2), "duration": 2.6},

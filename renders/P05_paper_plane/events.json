@@ -1,0 +1,157 @@
+{
+ "name": "P05_paper_plane",
+ "fps": 24,
+ "frames": 360,
+ "duration": 15.0,
+ "marks": {},
+ "events": [
+  {
+   "t": 0.0,
+   "end": 2.75,
+   "kind": "action",
+   "char": "Piko",
+   "action": "idle"
+  },
+  {
+   "t": 0.0,
+   "end": 2.95,
+   "kind": "action",
+   "char": "Zop",
+   "action": "idle"
+  },
+  {
+   "t": 2.15,
+   "kind": "fx",
+   "fx": "sparkle"
+  },
+  {
+   "t": 2.5,
+   "end": 4.9,
+   "kind": "action",
+   "char": "Piko",
+   "action": "anger"
+  },
+  {
+   "t": 2.7,
+   "end": 4.9,
+   "kind": "action",
+   "char": "Zop",
+   "action": "happiness"
+  },
+  {
+   "t": 2.77,
+   "kind": "land",
+   "strength": 0.3,
+   "sound": "tap",
+   "prop": "plane"
+  },
+  {
+   "t": 4.6,
+   "end": 6.777,
+   "kind": "action",
+   "char": "Piko",
+   "action": "idle"
+  },
+  {
+   "t": 4.6,
+   "end": 12.55,
+   "kind": "action",
+   "char": "Zop",
+   "action": "idle"
+  },
+  {
+   "t": 4.9,
+   "kind": "cut"
+  },
+  {
+   "t": 6.527,
+   "end": 8.389,
+   "kind": "action",
+   "char": "Piko",
+   "action": "fear"
+  },
+  {
+   "t": 7.6,
+   "kind": "land",
+   "strength": 0.4,
+   "sound": "tap",
+   "prop": "plane"
+  },
+  {
+   "t": 7.85,
+   "kind": "cut"
+  },
+  {
+   "t": 8.089,
+   "end": 8.75,
+   "kind": "action",
+   "char": "Piko",
+   "action": "idle"
+  },
+  {
+   "t": 8.5,
+   "end": 10.7,
+   "kind": "action",
+   "char": "Piko",
+   "action": "happiness"
+  },
+  {
+   "t": 10.4,
+   "end": 12.27,
+   "kind": "action",
+   "char": "Piko",
+   "action": "idle"
+  },
+  {
+   "t": 12.0,
+   "kind": "fx",
+   "fx": "sparkle"
+  },
+  {
+   "t": 12.02,
+   "end": 14.32,
+   "kind": "action",
+   "char": "Piko",
+   "action": "exaggerated_reaction"
+  },
+  {
+   "t": 12.3,
+   "end": 14.5,
+   "kind": "action",
+   "char": "Zop",
+   "action": "happiness"
+  },
+  {
+   "t": 12.7,
+   "kind": "land",
+   "strength": 0.3,
+   "sound": "tap",
+   "prop": "plane"
+  },
+  {
+   "t": 12.9,
+   "kind": "cut"
+  },
+  {
+   "t": 14.07,
+   "end": 16.87,
+   "kind": "action",
+   "char": "Piko",
+   "action": "facepalm"
+  },
+  {
+   "t": 14.35,
+   "end": 14.65,
+   "kind": "action",
+   "char": "Zop",
+   "action": "idle"
+  },
+  {
+   "t": 16.67,
+   "end": 17.07,
+   "kind": "action",
+   "char": "Piko",
+   "action": "idle"
+  }
+ ]
+}
