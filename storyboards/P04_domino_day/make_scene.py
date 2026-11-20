@@ -258,7 +258,7 @@ spec = {
   "stage": {"hdri": {"id": "kloofendal_48d_partly_cloudy_puresky", "strength": 2.0, "rotation": 40, "haze": True},
             "grass_texture": {"id": "Grass005", "size": 0.9}, "ambient": 0.55, "ambient_color": "#CFE0FF"},
   "light": {"sun": 3.2, "azimuth": -38, "elevation": 48, "rim": 180},
-  "camera": {"shots": [dict(WIDE, t=0), dict(MED, t=2.05), dict(INSERT, t="cel+0.40"), dict(CHAIN, t="cel+1.30"),
+  "camera": {"shots": [dict(WIDE, t=0), dict(MED, t=1.35), dict(INSERT, t="cel+0.40"), dict(CHAIN, t="cel+1.30"),
                        dict(END, t="cel+%.3f" % (PRESS + 0.35))],
              "shakes": [{"t": round(LAND, 3), "amount": 0.012, "dur": 0.25},
                         {"t": "cel+%.3f" % HIT, "amount": 0.03, "dur": 0.35}]},
