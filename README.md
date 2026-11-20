@@ -8,7 +8,7 @@ Dialogue-free 3D slapstick in vertical 15–30 s episodes, for everyone, everywh
 - Brand & Character Bible (Claude doc): https://claude.ai/artifact/PmPxEZ47ASG7gFnVVeL22c
 - How a video is made: `documentation/PIPELINE.md` · scene files: `documentation/SCENE_FORMAT.md`
 
-## Status (19 Nov 2026)
+## Status (20 Nov 2026)
 
 | Item | State |
 | --- | --- |
@@ -17,9 +17,11 @@ Dialogue-free 3D slapstick in vertical 15–30 s episodes, for everyone, everywh
 | Social accounts | YouTube Zoppiko (@Zoppiko), Facebook page Zoppiko, TikTok @unseenworld (handle change possible from 5 Dec 2026), Instagram zoppiko to sign in on the desktop browser |
 | Concepts | 30 scored in `ideas/concepts.csv` |
 | P01 The Button | final video done and checked: `exports/P01_the_button/` (master H.264, upload HEVC ≤3.7 MB) |
-| P02 The Last Cookie | storyboard done, final render in progress |
-| P03 The Second Peel | storyboard done, render next |
-| Publishing | approved by the author (19 Nov 2026); blocked until the chat allows browser file uploads (auto mode) or the author uploads; texts in `published/drafts.md` |
+| P02 The Last Cookie | final video done and checked (rolling cookie re-rendered in front of Piko's feet): `exports/P02_the_last_cookie/` |
+| P03 The Second Peel | final render in progress (4 samples: same look as 6, 35% faster) |
+| P04 Domino Day | format test "satisfying + gag": simulated chain of 46 dominoes, storyboard stills checked, render after P03 |
+| P05 The Paper Plane | scene and sound written (flight paths, ducking); preview stills to check |
+| Publishing | approved by the author (19 Nov 2026); auto mode on (20 Nov); uploads need a PC folder connected to the chat (author to add `Video\\Zoppiko`); YouTube: not made for kids, no AI label (author's decisions); texts in `published/drafts.md` |
 
 ## Folders
 
