@@ -21,7 +21,7 @@ Dialogue-free 3D slapstick in vertical 15–30 s episodes, for everyone, everywh
 | P03 The Second Peel | final render in progress (4 samples: same look as 6, 35% faster) |
 | P04 Domino Day | format test "satisfying + gag": simulated chain of 46 dominoes, storyboard stills checked, render after P03 |
 | P05 The Paper Plane | scene and sound written (flight paths, ducking); preview stills to check |
-| Publishing | approved by the author (19 Nov 2026); auto mode on (20 Nov); uploads need a PC folder connected to the chat (author to add `Video\\Zoppiko`); YouTube: not made for kids, no AI label (author's decisions); texts in `published/drafts.md` |
+| Publishing | approved by the author (19 Nov 2026); auto mode on (20 Nov); uploads need a PC folder connected to the chat (author to add `Video\Zoppiko`); YouTube: not made for kids, no AI label (author's decisions); texts in `published/drafts.md` |
 
 ## Folders
 
