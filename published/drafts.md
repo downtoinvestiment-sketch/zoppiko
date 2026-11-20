@@ -74,3 +74,13 @@ Music credit (CC-BY 4.0) goes in every description or caption, in the form shown
 - **TikTok / Instagram caption:** It missed every single domino 😮‍💨 …then he jumped.
   Music: "Fluffing a Duck" Kevin MacLeod (incompetech.com), CC BY 4.0 · #zoppiko #animation #dominoes #satisfying
 - **Cover frame:** the high shot with the wave halfway through the line.
+
+## Upload settings (same for every episode unless a test says otherwise)
+
+- **YouTube (Shorts):** title and description above; audience as the author decides; category Film & Animation;
+  comments on; Shorts remixing allowed; altered content "No" (animation is exempt); upload the `_upload.mp4` file
+  (HEVC, under 3.7 MB) or the master; publish or schedule at the planned slot.
+- **TikTok:** caption above; comments, Duet and Stitch on (remixes spread the video); AI label only if the author asks.
+- **Facebook (Reels, from the Zoppiko page):** description as on YouTube, public.
+- **Instagram (Reels):** caption above; only after the author logs in as zoppiko.
+- After publishing: one line per platform in `registry.csv` (date, platform, episode, url, title, status, approved_by).
