@@ -13,7 +13,8 @@
   "hdri": {
    "id": "kloofendal_48d_partly_cloudy_puresky",
    "strength": 2.0,
-   "rotation": 40
+   "rotation": 40,
+   "haze": true
   },
   "grass_texture": {
    "id": "Grass005",

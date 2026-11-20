@@ -115,9 +115,10 @@ def library():
     return pt_assets
 
 
-def sky_photo(sc, path, strength=1.8, rotation=0.0, ambient=0.55, amb_color='#CFE0FF'):
+def sky_photo(sc, path, strength=1.8, rotation=0.0, ambient=0.55, amb_color='#CFE0FF', haze=False):
     """the camera sees a real sky photo (equirectangular HDRI); the characters are lit by the ZOPPIKO daylight,
-    so they look the same in every episode whatever the sky."""
+    so they look the same in every episode whatever the sky. haze=True: below the horizon (seen past the edge of the
+    Pad from a high camera) the photo fades into its own horizon colour instead of the dark bottom of the file."""
     w = bpy.data.worlds.new('ZK_SkyPhoto'); sc.world = w; w.use_nodes = True
     nt = w.node_tree; N = nt.nodes; L = nt.links
     for n in list(N):
@@ -131,7 +132,24 @@ def sky_photo(sc, path, strength=1.8, rotation=0.0, ambient=0.55, amb_color='#CF
     lp = N.new('ShaderNodeLightPath'); mix = N.new('ShaderNodeMixShader')
     L.new(tc.outputs['Generated'], mp.inputs['Vector']); L.new(mp.outputs['Vector'], env.inputs['Vector'])
     hsv = N.new('ShaderNodeHueSaturation'); hsv.inputs['Saturation'].default_value = 1.3
-    L.new(env.outputs['Color'], hsv.inputs['Color']); L.new(hsv.outputs['Color'], bg.inputs['Color'])
+    L.new(env.outputs['Color'], hsv.inputs['Color'])
+    if haze:
+        import numpy as np
+        img = env.image; w_, h_ = img.size
+        px = np.array(img.pixels[:], dtype=np.float32).reshape(h_, w_, img.channels)
+        band = px[max(0, h_ // 2 - max(2, h_ // 60)):h_ // 2 + 1, :, :3]
+        hc = band.reshape(-1, 3).mean(axis=0)
+        sep = N.new('ShaderNodeSeparateXYZ'); L.new(tc.outputs['Generated'], sep.inputs['Vector'])
+        mr = N.new('ShaderNodeMapRange'); mr.inputs['From Min'].default_value = -0.02; mr.inputs['From Max'].default_value = -0.20
+        L.new(sep.outputs['Z'], mr.inputs['Value'])
+        mc = N.new('ShaderNodeMix'); mc.data_type = 'RGBA'
+        ia = [i for i in mc.inputs if i.name == 'A' and i.type == 'RGBA'][0]
+        ib = [i for i in mc.inputs if i.name == 'B' and i.type == 'RGBA'][0]
+        oc = [o for o in mc.outputs if o.type == 'RGBA'][0]
+        ib.default_value = (float(hc[0]), float(hc[1]), float(hc[2]), 1.0)
+        L.new(mr.outputs['Result'], mc.inputs['Factor']); L.new(hsv.outputs['Color'], ia); L.new(oc, bg.inputs['Color'])
+    else:
+        L.new(hsv.outputs['Color'], bg.inputs['Color'])
     L.new(lp.outputs['Is Camera Ray'], mix.inputs['Fac'])
     L.new(amb.outputs['Background'], mix.inputs[1]); L.new(bg.outputs['Background'], mix.inputs[2])
     L.new(mix.outputs['Shader'], out.inputs['Surface'])
@@ -864,7 +882,7 @@ def build(spec, base):
         else:                                                # backdrop only: the light stays the ZOPPIKO daylight
             v = A.scarica(hd['id'])
             sky_photo(sc, A.percorso(v['file_1k']), hd.get('strength', 1.8), hd.get('rotation', 0.0),
-                      stg.get('ambient', 0.55), stg.get('ambient_color', '#CFE0FF'))
+                      stg.get('ambient', 0.55), stg.get('ambient_color', '#CFE0FF'), hd.get('haze', False))
     else:
         sky_world(sc, stg.get('horizon', '#FFE6C4'), stg.get('zenith', '#8CC4FF'), stg.get('ambient', 0.55),
                   stg.get('ambient_color', '#CFE0FF'), stg.get('sky_strength', 1.8))

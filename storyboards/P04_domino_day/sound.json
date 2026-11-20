@@ -7,8 +7,8 @@
   "fade_in": 0.25,
   "mute": [
    [
-    "cel+5.830",
-    "cel+7.794"
+    "cel+5.938",
+    "cel+7.902"
    ]
   ],
   "fade": 0.12
@@ -16,19 +16,19 @@
  "rules": true,
  "cues": [
   {
-   "t": "cel+7.744",
+   "t": "cel+7.852",
    "sound": "giggle",
    "gain": -10,
    "length": 1.5,
    "fade_out": 0.35
   },
   {
-   "t": "cel+8.024",
+   "t": "cel+8.132",
    "sound": "thud_soft",
    "gain": -7
   },
   {
-   "t": "cel+8.394",
+   "t": "cel+8.502",
    "sound": "boing_far"
   }
  ],

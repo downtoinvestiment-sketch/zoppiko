@@ -20,7 +20,7 @@ G = 9.81
 R = 0.30
 ROWS = [-0.55, 0.05, 0.65, 1.25]
 X0, X1 = -0.60, 0.60
-START = (0.60, -1.04)                       # beside Piko's right foot
+START = (0.66, -1.10)                       # beside Piko's right foot
 
 
 def path_pieces():
@@ -245,20 +245,21 @@ ball = {"name": "ball", "type": "beachball", "radius": 0.3, "location": [ZOP[0] 
                    {"t": "cel+%.4f" % (HIT + 0.02), "ballistic": {"v": [-1.9, 1.5, 4.2], "g": 12.0, "spin": [0, -420, 90]}},
                    {"t": "cel+%.4f" % (HIT + 0.9), "hide": True}]}
 
-WIDE = {"location": [0.0, -1.6, 2.7], "target": [0.0, 0.2, 0.0], "lens": 28}
+WIDE = {"location": [0.0, -2.8, 4.0], "target": [0.0, 0.5, 0.0], "lens": 46}
 MED = {"location": [0.1, -4.2, 0.95], "target": [0.1, -1.1, 0.55], "lens": 40}
-CHAIN = {"location": [0.0, -1.6, 2.7], "target": [0.0, 0.2, 0.0], "lens": 28,
-         "move": {"delay": 0.3, "dur": 4.2, "location": [0.12, -1.15, 2.55], "target": [0.15, 0.5, 0.0], "lens": 28}}
+INSERT = {"location": [0.9, -2.6, 0.6], "target": [0.45, -0.95, 0.35], "lens": 38}
+CHAIN = dict(WIDE, move={"delay": 0.2, "dur": 4.2, "location": [0.05, -2.45, 3.6], "target": [0.08, 0.6, 0.0], "lens": 46})
 END = {"location": [-0.06, -3.6, 0.95], "target": [-0.06, -1.15, 0.62], "lens": 40}
 
 spec = {
   "name": "P04_domino_day", "title": "Domino Day",
   "logline": "A red button lands a hair from Piko's domino line and nothing falls. Then Piko celebrates with a hop.",
   "render": {"resolution": [1080, 1920], "samples": 6},
-  "stage": {"hdri": {"id": "kloofendal_48d_partly_cloudy_puresky", "strength": 2.0, "rotation": 40},
+  "stage": {"hdri": {"id": "kloofendal_48d_partly_cloudy_puresky", "strength": 2.0, "rotation": 40, "haze": True},
             "grass_texture": {"id": "Grass005", "size": 0.9}, "ambient": 0.55, "ambient_color": "#CFE0FF"},
   "light": {"sun": 3.2, "azimuth": -38, "elevation": 48, "rim": 180},
-  "camera": {"shots": [dict(WIDE, t=0), dict(MED, t=2.05), dict(CHAIN, t="cel+1.05"), dict(END, t="cel+%.3f" % (PRESS + 0.35))],
+  "camera": {"shots": [dict(WIDE, t=0), dict(MED, t=2.05), dict(INSERT, t="cel+0.40"), dict(CHAIN, t="cel+1.30"),
+                       dict(END, t="cel+%.3f" % (PRESS + 0.35))],
              "shakes": [{"t": round(LAND, 3), "amount": 0.012, "dur": 0.25},
                         {"t": "cel+%.3f" % HIT, "amount": 0.03, "dur": 0.35}]},
   "props": [button, ball] + props,

@@ -147,6 +147,23 @@ def music_track(spec, n, marks):
     return out * env
 
 
+def loudnorm(src, dst, I=-14.0, TP=-2.0, LRA=11.0):
+    """two-pass EBU R128 normalisation: measure, then apply linearly (short clips miss the target in one pass)."""
+    import re
+    r = subprocess.run(['ffmpeg', '-hide_banner', '-nostats', '-i', src, '-af',
+                        'loudnorm=I=%g:TP=%g:LRA=%g:print_format=json' % (I, TP, LRA), '-f', 'null', '-'],
+                       capture_output=True, text=True)
+    m = re.search(r'\{[^{}]*"input_i"[^{}]*\}', r.stderr, re.S)
+    if not m:
+        subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', src, '-af', 'loudnorm=I=%g:TP=%g:LRA=%g' % (I, TP, LRA), '-ar', str(SR), dst],
+                       check=True)
+        return
+    j = json.loads(m.group(0))
+    af = ('loudnorm=I=%g:TP=%g:LRA=%g:measured_I=%s:measured_TP=%s:measured_LRA=%s:measured_thresh=%s:offset=%s:linear=true'
+          % (I, TP, LRA, j['input_i'], j['input_tp'], j['input_lra'], j['input_thresh'], j['target_offset']))
+    subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', src, '-af', af, '-ar', str(SR), dst], check=True)
+
+
 def main(story):
     story = os.path.abspath(story)
     scene = json.load(open(os.path.join(story, 'scene.json')))
@@ -180,7 +197,7 @@ def main(story):
     import wave
     with wave.open(raw, 'wb') as w:
         w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR); w.writeframes(pcm.tobytes())
-    subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', raw, '-af', 'loudnorm=I=-14:TP=-1.0:LRA=11', '-ar', str(SR), mix], check=True)
+    loudnorm(raw, mix)
     vids = sorted(f for f in os.listdir(rd) if f.endswith('_silent.mp4'))
     if vids:
         out = os.path.join(rd, '%s_final.mp4' % name)

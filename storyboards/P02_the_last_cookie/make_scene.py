@@ -10,10 +10,10 @@ cookie = {"name": "cookie", "type": "cookie", "radius": R, "height": 0.06, "loca
           "motion": [
               {"t": 0.0, "drop": {"to": [1.25, 0.45, 0.0], "h": 2.0, "bounce": 0.05, "bounces": 2, "squash": 0.25,
                                   "rot": [0, 0, 20], "spin": [160, 0, 90], "sound": "thud", "fall_sound": "whistle_short"}},
-              {"t": "bonk+1.5", "fly": {"from": [1.25, 0.45, 0.0], "to": [1.25, 0.45, R], "dur": 0.35, "arc": 0.08,
+              {"t": "bonk+1.5", "fly": {"from": [1.25, 0.45, 0.0], "to": [1.25, 0.25, R], "dur": 0.35, "arc": 0.08,
                                          "spin": [257, 0, (0 - 20) / 0.35], "land": False}},
-              {"t": "bonk+1.85", "roll": {"from": [1.25, 0.45, R], "to": [3.12, 0.45, R], "dur": 1.5, "radius": R, "ease": "in"}},
-              {"t": "bonk+3.35", "ballistic": {"from": [3.12, 0.45, R], "v": [1.8, 0.0, 0.3], "g": 12.0, "spin": [0, -500, 0]}},
+              {"t": "bonk+1.85", "roll": {"from": [1.25, 0.25, R], "to": [3.12, 0.25, R], "dur": 1.5, "radius": R, "ease": "in"}},
+              {"t": "bonk+3.35", "ballistic": {"from": [3.12, 0.25, R], "v": [1.8, 0.0, 0.3], "g": 12.0, "spin": [0, -500, 0]}},
               {"t": "bonk+5.0", "hide": True}]}
 tower = []
 base = [2.08, -0.35]

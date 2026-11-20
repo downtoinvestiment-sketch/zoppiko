@@ -79,7 +79,7 @@ spec = {
   "name": "P05_paper_plane", "title": "The Paper Plane",
   "logline": "A paper plane keeps coming back for Piko.",
   "render": {"resolution": [1080, 1920], "samples": 6},
-  "stage": {"hdri": {"id": "kloofendal_48d_partly_cloudy_puresky", "strength": 2.0, "rotation": 40},
+  "stage": {"hdri": {"id": "kloofendal_48d_partly_cloudy_puresky", "strength": 2.0, "rotation": 40, "haze": True},
             "grass_texture": {"id": "Grass005", "size": 0.9}, "ambient": 0.55, "ambient_color": "#CFE0FF"},
   "light": {"sun": 3.2, "azimuth": -38, "elevation": 48, "rim": 180},
   "camera": {"shots": [dict(HOME, t=0), dict(WIDE, t=round(T2 + 0.2, 3)),
