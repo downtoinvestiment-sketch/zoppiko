@@ -1,8 +1,8 @@
 {
  "name": "P04_domino_day",
  "fps": 24,
- "frames": 288,
- "duration": 12.0,
+ "frames": 290,
+ "duration": 12.083,
  "marks": {
   "cel": 2.35
  },
@@ -61,7 +61,7 @@
    "gain": -23,
    "pitch": -3,
    "pan": 0.0,
-   "prop": "dom43"
+   "prop": "dom44"
   },
   {
    "t": 0.971,
@@ -70,7 +70,7 @@
    "gain": -17,
    "pitch": -3,
    "pan": 0.0,
-   "prop": "dom44"
+   "prop": "dom45"
   },
   {
    "t": 1.04,
@@ -86,7 +86,7 @@
    "gain": -27,
    "pitch": -3,
    "pan": 0.0,
-   "prop": "dom43"
+   "prop": "dom44"
   },
   {
    "t": 1.127,
@@ -95,7 +95,7 @@
    "gain": -21,
    "pitch": -3,
    "pan": 0.0,
-   "prop": "dom44"
+   "prop": "dom45"
   },
   {
    "t": 1.283,
@@ -104,7 +104,7 @@
    "gain": -31,
    "pitch": -3,
    "pan": 0.0,
-   "prop": "dom43"
+   "prop": "dom44"
   },
   {
    "t": 1.283,
@@ -113,7 +113,11 @@
    "gain": -25,
    "pitch": -3,
    "pan": 0.0,
-   "prop": "dom44"
+   "prop": "dom45"
+  },
+  {
+   "t": 1.35,
+   "kind": "cut"
   },
   {
    "t": 1.9,
@@ -130,10 +134,6 @@
    "action": "idle"
   },
   {
-   "t": 2.05,
-   "kind": "cut"
-  },
-  {
    "t": 2.35,
    "end": 4.45,
    "kind": "action",
@@ -141,25 +141,25 @@
    "action": "celebrate"
   },
   {
+   "t": 2.75,
+   "kind": "cut"
+  },
+  {
    "t": 3.256,
    "kind": "cue",
    "sound": "domino_0",
    "gain": -11,
    "pitch": 0.0,
-   "pan": 0.55,
+   "pan": 0.6,
    "prop": "dom00"
-  },
-  {
-   "t": 3.4000000000000004,
-   "kind": "cut"
   },
   {
    "t": 3.404,
    "kind": "cue",
    "sound": "domino_1",
    "gain": -11,
-   "pitch": 0.16,
-   "pan": 0.55,
+   "pitch": 0.15,
+   "pan": 0.6,
    "prop": "dom01"
   },
   {
@@ -167,13 +167,13 @@
    "kind": "cue",
    "sound": "domino_2",
    "gain": -11,
-   "pitch": 0.31,
-   "pan": 0.51,
+   "pitch": 0.3,
+   "pan": 0.59,
    "prop": "dom02"
   },
   {
    "t": 3.55,
-   "end": 9.284,
+   "end": 9.392,
    "kind": "action",
    "char": "Zop",
    "action": "dance"
@@ -183,17 +183,21 @@
    "kind": "cue",
    "sound": "domino_3",
    "gain": -11,
-   "pitch": 0.47,
-   "pan": 0.4,
+   "pitch": 0.46,
+   "pan": 0.5,
    "prop": "dom03"
+  },
+  {
+   "t": 3.6500000000000004,
+   "kind": "cut"
   },
   {
    "t": 3.76,
    "kind": "cue",
    "sound": "domino_4",
    "gain": -11,
-   "pitch": 0.62,
-   "pan": 0.26,
+   "pitch": 0.61,
+   "pan": 0.36,
    "prop": "dom04"
   },
   {
@@ -201,8 +205,8 @@
    "kind": "cue",
    "sound": "domino_0",
    "gain": -11,
-   "pitch": 0.78,
-   "pan": 0.1,
+   "pitch": 0.76,
+   "pan": 0.21,
    "prop": "dom05"
   },
   {
@@ -210,8 +214,8 @@
    "kind": "cue",
    "sound": "domino_1",
    "gain": -11,
-   "pitch": 0.93,
-   "pan": -0.05,
+   "pitch": 0.91,
+   "pan": 0.06,
    "prop": "dom06"
   },
   {
@@ -219,8 +223,8 @@
    "kind": "cue",
    "sound": "domino_2",
    "gain": -11,
-   "pitch": 1.09,
-   "pan": -0.21,
+   "pitch": 1.07,
+   "pan": -0.1,
    "prop": "dom07"
   },
   {
@@ -228,8 +232,8 @@
    "kind": "cue",
    "sound": "domino_3",
    "gain": -11,
-   "pitch": 1.24,
-   "pan": -0.36,
+   "pitch": 1.22,
+   "pan": -0.25,
    "prop": "dom08"
   },
   {
@@ -244,8 +248,8 @@
    "kind": "cue",
    "sound": "domino_4",
    "gain": -11,
-   "pitch": 1.4,
-   "pan": -0.52,
+   "pitch": 1.37,
+   "pan": -0.41,
    "prop": "dom09"
   },
   {
@@ -253,8 +257,8 @@
    "kind": "cue",
    "sound": "domino_0",
    "gain": -11,
-   "pitch": 1.56,
-   "pan": -0.67,
+   "pitch": 1.52,
+   "pan": -0.56,
    "prop": "dom10"
   },
   {
@@ -262,7 +266,7 @@
    "kind": "cue",
    "sound": "domino_1",
    "gain": -11,
-   "pitch": 1.71,
+   "pitch": 1.67,
    "pan": -0.7,
    "prop": "dom11"
   },
@@ -271,7 +275,7 @@
    "kind": "cue",
    "sound": "domino_2",
    "gain": -11,
-   "pitch": 1.87,
+   "pitch": 1.83,
    "pan": -0.7,
    "prop": "dom12"
   },
@@ -280,7 +284,7 @@
    "kind": "cue",
    "sound": "domino_3",
    "gain": -11,
-   "pitch": 2.02,
+   "pitch": 1.98,
    "pan": -0.7,
    "prop": "dom13"
   },
@@ -289,8 +293,8 @@
    "kind": "cue",
    "sound": "domino_4",
    "gain": -11,
-   "pitch": 2.18,
-   "pan": -0.65,
+   "pitch": 2.13,
+   "pan": -0.7,
    "prop": "dom14"
   },
   {
@@ -298,8 +302,8 @@
    "kind": "cue",
    "sound": "domino_0",
    "gain": -11,
-   "pitch": 2.33,
-   "pan": -0.5,
+   "pitch": 2.28,
+   "pan": -0.61,
    "prop": "dom15"
   },
   {
@@ -307,8 +311,8 @@
    "kind": "cue",
    "sound": "domino_1",
    "gain": -11,
-   "pitch": 2.49,
-   "pan": -0.35,
+   "pitch": 2.43,
+   "pan": -0.46,
    "prop": "dom16"
   },
   {
@@ -316,8 +320,8 @@
    "kind": "cue",
    "sound": "domino_2",
    "gain": -11,
-   "pitch": 2.64,
-   "pan": -0.19,
+   "pitch": 2.59,
+   "pan": -0.3,
    "prop": "dom17"
   },
   {
@@ -325,8 +329,8 @@
    "kind": "cue",
    "sound": "domino_3",
    "gain": -11,
-   "pitch": 2.8,
-   "pan": -0.04,
+   "pitch": 2.74,
+   "pan": -0.15,
    "prop": "dom18"
   },
   {
@@ -334,8 +338,8 @@
    "kind": "cue",
    "sound": "domino_4",
    "gain": -11,
-   "pitch": 2.96,
-   "pan": 0.11,
+   "pitch": 2.89,
+   "pan": 0.01,
    "prop": "dom19"
   },
   {
@@ -343,8 +347,8 @@
    "kind": "cue",
    "sound": "domino_0",
    "gain": -11,
-   "pitch": 3.11,
-   "pan": 0.27,
+   "pitch": 3.04,
+   "pan": 0.16,
    "prop": "dom20"
   },
   {
@@ -352,8 +356,8 @@
    "kind": "cue",
    "sound": "domino_1",
    "gain": -11,
-   "pitch": 3.27,
-   "pan": 0.42,
+   "pitch": 3.2,
+   "pan": 0.31,
    "prop": "dom21"
   },
   {
@@ -361,17 +365,21 @@
    "kind": "cue",
    "sound": "domino_2",
    "gain": -11,
-   "pitch": 3.42,
-   "pan": 0.58,
+   "pitch": 3.35,
+   "pan": 0.47,
    "prop": "dom22"
+  },
+  {
+   "t": 5.75,
+   "kind": "cut"
   },
   {
    "t": 5.822,
    "kind": "cue",
    "sound": "domino_3",
    "gain": -11,
-   "pitch": 3.58,
-   "pan": 0.7,
+   "pitch": 3.5,
+   "pan": 0.62,
    "prop": "dom23"
   },
   {
@@ -379,7 +387,7 @@
    "kind": "cue",
    "sound": "domino_4",
    "gain": -11,
-   "pitch": 3.73,
+   "pitch": 3.65,
    "pan": 0.7,
    "prop": "dom24"
   },
@@ -388,7 +396,7 @@
    "kind": "cue",
    "sound": "domino_0",
    "gain": -11,
-   "pitch": 3.89,
+   "pitch": 3.8,
    "pan": 0.7,
    "prop": "dom25"
   },
@@ -397,7 +405,7 @@
    "kind": "cue",
    "sound": "domino_1",
    "gain": -11,
-   "pitch": 4.04,
+   "pitch": 3.96,
    "pan": 0.7,
    "prop": "dom26"
   },
@@ -406,8 +414,8 @@
    "kind": "cue",
    "sound": "domino_2",
    "gain": -11,
-   "pitch": 4.2,
-   "pan": 0.6,
+   "pitch": 4.11,
+   "pan": 0.7,
    "prop": "dom27"
   },
   {
@@ -415,8 +423,8 @@
    "kind": "cue",
    "sound": "domino_3",
    "gain": -11,
-   "pitch": 4.36,
-   "pan": 0.44,
+   "pitch": 4.26,
+   "pan": 0.55,
    "prop": "dom28"
   },
   {
@@ -424,8 +432,8 @@
    "kind": "cue",
    "sound": "domino_4",
    "gain": -11,
-   "pitch": 4.51,
-   "pan": 0.29,
+   "pitch": 4.41,
+   "pan": 0.4,
    "prop": "dom29"
   },
   {
@@ -433,13 +441,13 @@
    "kind": "cue",
    "sound": "domino_0",
    "gain": -11,
-   "pitch": 4.67,
-   "pan": 0.13,
+   "pitch": 4.57,
+   "pan": 0.24,
    "prop": "dom30"
   },
   {
    "t": 6.6,
-   "end": 8.36,
+   "end": 8.468,
    "kind": "action",
    "char": "Piko",
    "action": "idle"
@@ -449,17 +457,21 @@
    "kind": "cue",
    "sound": "domino_1",
    "gain": -11,
-   "pitch": 4.82,
-   "pan": -0.02,
+   "pitch": 4.72,
+   "pan": 0.09,
    "prop": "dom31"
+  },
+  {
+   "t": 6.75,
+   "kind": "cut"
   },
   {
    "t": 6.797,
    "kind": "cue",
    "sound": "domino_2",
    "gain": -11,
-   "pitch": 4.98,
-   "pan": -0.18,
+   "pitch": 4.87,
+   "pan": -0.07,
    "prop": "dom32"
   },
   {
@@ -467,8 +479,8 @@
    "kind": "cue",
    "sound": "domino_3",
    "gain": -11,
-   "pitch": 5.13,
-   "pan": -0.33,
+   "pitch": 5.02,
+   "pan": -0.22,
    "prop": "dom33"
   },
   {
@@ -476,8 +488,8 @@
    "kind": "cue",
    "sound": "domino_4",
    "gain": -11,
-   "pitch": 5.29,
-   "pan": -0.49,
+   "pitch": 5.17,
+   "pan": -0.38,
    "prop": "dom34"
   },
   {
@@ -485,8 +497,8 @@
    "kind": "cue",
    "sound": "domino_0",
    "gain": -11,
-   "pitch": 5.44,
-   "pan": -0.64,
+   "pitch": 5.33,
+   "pan": -0.53,
    "prop": "dom35"
   },
   {
@@ -494,8 +506,8 @@
    "kind": "cue",
    "sound": "domino_1",
    "gain": -11,
-   "pitch": 5.6,
-   "pan": -0.7,
+   "pitch": 5.48,
+   "pan": -0.68,
    "prop": "dom36"
   },
   {
@@ -503,7 +515,7 @@
    "kind": "cue",
    "sound": "domino_2",
    "gain": -11,
-   "pitch": 5.76,
+   "pitch": 5.63,
    "pan": -0.7,
    "prop": "dom37"
   },
@@ -512,7 +524,7 @@
    "kind": "cue",
    "sound": "domino_3",
    "gain": -11,
-   "pitch": 5.91,
+   "pitch": 5.78,
    "pan": -0.7,
    "prop": "dom38"
   },
@@ -521,8 +533,8 @@
    "kind": "cue",
    "sound": "domino_4",
    "gain": -11,
-   "pitch": 6.07,
-   "pan": -0.68,
+   "pitch": 5.93,
+   "pan": -0.7,
    "prop": "dom39"
   },
   {
@@ -530,17 +542,17 @@
    "kind": "cue",
    "sound": "domino_0",
    "gain": -11,
-   "pitch": 6.22,
-   "pan": -0.54,
+   "pitch": 6.09,
+   "pan": -0.64,
    "prop": "dom40"
   },
   {
-   "t": 7.76,
+   "t": 7.772,
    "kind": "cue",
-   "sound": "domino_big_1",
-   "gain": -7,
-   "pitch": 0.0,
-   "pan": -0.38,
+   "sound": "domino_1",
+   "gain": -11,
+   "pitch": 6.24,
+   "pan": -0.49,
    "prop": "dom41"
   },
   {
@@ -549,105 +561,114 @@
    "sound": "domino_big_0",
    "gain": -7,
    "pitch": 0.0,
-   "pan": -0.23,
+   "pan": -0.34,
    "prop": "dom42"
   },
   {
-   "t": 7.989,
+   "t": 7.977,
    "kind": "cue",
    "sound": "domino_big_1",
    "gain": -7,
    "pitch": 0.0,
-   "pan": -0.04,
+   "pan": -0.19,
    "prop": "dom43"
   },
   {
-   "t": 8.06,
-   "end": 10.194,
+   "t": 8.097,
+   "kind": "cue",
+   "sound": "domino_big_0",
+   "gain": -7,
+   "pitch": 0.0,
+   "pan": 0.0,
+   "prop": "dom44"
+  },
+  {
+   "t": 8.168,
+   "end": 10.302,
    "kind": "action",
    "char": "Piko",
    "action": "idle"
   },
   {
-   "t": 8.21,
+   "t": 8.318,
    "kind": "press",
    "sound": "click",
    "prop": "button"
   },
   {
-   "t": 8.23,
+   "t": 8.338,
    "kind": "fx",
    "fx": "sparkle"
   },
   {
-   "t": 8.46,
+   "t": 8.568,
    "kind": "fall_start",
    "dur": 1.134,
    "sound": "whistle_long",
    "prop": "ball"
   },
   {
-   "t": 8.56,
+   "t": 8.668,
    "kind": "cut"
   },
   {
-   "t": 8.984,
-   "end": 9.784,
+   "t": 9.092,
+   "end": 9.892,
    "kind": "action",
    "char": "Zop",
    "action": "idle"
   },
   {
-   "t": 9.534,
-   "end": 12.034,
+   "t": 9.642,
+   "end": 12.142,
    "kind": "action",
    "char": "Zop",
    "action": "fall"
   },
   {
-   "t": 9.594,
+   "t": 9.702,
    "kind": "fx",
    "fx": "sparkle"
   },
   {
-   "t": 9.594,
+   "t": 9.702,
    "kind": "fx",
    "fx": "burst"
   },
   {
-   "t": 9.594,
+   "t": 9.702,
    "kind": "land",
    "strength": 1.0,
    "sound": "bonk",
    "prop": "ball"
   },
   {
-   "t": 9.944,
-   "end": 12.144,
+   "t": 10.052,
+   "end": 12.252,
    "kind": "action",
    "char": "Piko",
    "action": "happiness"
   },
   {
-   "t": 10.344,
+   "t": 10.452,
    "kind": "fx",
    "fx": "puff"
   },
   {
-   "t": 10.494,
+   "t": 10.602,
    "kind": "fx",
    "fx": "dizzy"
   },
   {
-   "t": 11.734,
-   "end": 12.444,
+   "t": 11.842,
+   "end": 12.552,
    "kind": "action",
    "char": "Zop",
    "action": "floor_idle"
   },
   {
-   "t": 11.844,
-   "end": 12.444,
+   "t": 11.952,
+   "end": 12.552,
    "kind": "action",
    "char": "Piko",
    "action": "idle"

@@ -247,9 +247,11 @@ ball = {"name": "ball", "type": "beachball", "radius": 0.3, "location": [ZOP[0] 
 
 WIDE = {"location": [0.0, -2.8, 4.0], "target": [0.0, 0.5, 0.0], "lens": 46}
 MED = {"location": [0.1, -4.2, 0.95], "target": [0.1, -1.1, 0.55], "lens": 40}
-INSERT = {"location": [0.9, -2.6, 0.6], "target": [0.45, -0.95, 0.35], "lens": 38}
-CHAIN = dict(WIDE, move={"delay": 0.2, "dur": 4.2, "location": [0.05, -2.45, 3.6], "target": [0.08, 0.6, 0.0], "lens": 46})
+INSERT = {"location": [0.66, -2.3, 0.14], "target": [0.5, -1.12, 0.05], "lens": 35}      # Piko's feet and the first domino
+TOP = {"location": [0.0, -1.3, 4.5], "target": [0.0, 0.3, 0.0], "lens": 38}            # the whole line from above
+TOP_PUSH = dict(TOP, move={"delay": 0.0, "dur": 1.8, "location": [0.2, -0.7, 3.8], "target": [0.3, 0.7, 0.0], "lens": 38})
 END = {"location": [-0.06, -3.6, 0.95], "target": [-0.06, -1.15, 0.62], "lens": 40}
+SIDE = {"location": [1.75, -0.45, 1.0], "target": [-0.05, -1.15, 0.6], "lens": 38}       # their faces while the line falls
 
 spec = {
   "name": "P04_domino_day", "title": "Domino Day",
@@ -258,8 +260,8 @@ spec = {
   "stage": {"hdri": {"id": "kloofendal_48d_partly_cloudy_puresky", "strength": 2.0, "rotation": 40, "haze": True},
             "grass_texture": {"id": "Grass005", "size": 0.9}, "ambient": 0.55, "ambient_color": "#CFE0FF"},
   "light": {"sun": 3.2, "azimuth": -38, "elevation": 48, "rim": 180},
-  "camera": {"shots": [dict(WIDE, t=0), dict(MED, t=1.35), dict(INSERT, t="cel+0.40"), dict(CHAIN, t="cel+1.30"),
-                       dict(END, t="cel+%.3f" % (PRESS + 0.35))],
+  "camera": {"shots": [dict(WIDE, t=0), dict(MED, t=1.35), dict(INSERT, t="cel+0.40"), dict(TOP, t="cel+1.30"),
+                       dict(SIDE, t="cel+3.40"), dict(TOP_PUSH, t="cel+4.40"), dict(END, t="cel+%.3f" % (PRESS + 0.35))],
              "shakes": [{"t": round(LAND, 3), "amount": 0.012, "dur": 0.25},
                         {"t": "cel+%.3f" % HIT, "amount": 0.03, "dur": 0.35}]},
   "props": [button, ball] + props,
@@ -280,7 +282,7 @@ spec = {
        {"look_at": [0.6, -0.8, 0.1], "at": "cel+1.7", "duration": 0.5},
        {"expression": "shocked", "at": "cel+1.75", "duration": 1.0},
        {"play": "fear"},
-       {"look_at": [-0.2, 0.3, 0.1], "at": "cel+2.6", "duration": 1.6},
+       {"look_at": [0.9, 0.4, 0.2], "at": "cel+2.6", "duration": 1.9},
        {"expression": "sad", "at": "cel+2.8", "duration": 1.6},
        {"until": "cel+%.3f" % (PRESS - 0.1)},
        {"look_at": [BUTTON[0], BUTTON[1], 0.3], "at": "cel+%.3f" % (PRESS - 0.2), "duration": 0.5},
