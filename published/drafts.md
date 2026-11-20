@@ -1,6 +1,11 @@
 # Metadata drafts for the pilots (not published — waiting for the author's approval)
 
-## Decisions needed from the author before the first upload
+## Author's decisions (20 Nov 2026)
+
+- YouTube audience: **not made for kids** (general audience, all ages) — decided by the author.
+- AI label: **no** (not required for clearly unrealistic 3D animation) — decided by the author.
+
+## Background on those decisions
 
 - **YouTube audience ("made for kids")**: a legal declaration (COPPA) that only the author can make. "Made for kids"
   turns off comments, the notification bell and personalised ads (lower revenue), and the video is shown mostly to
