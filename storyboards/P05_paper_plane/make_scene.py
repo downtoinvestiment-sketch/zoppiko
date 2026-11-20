@@ -11,7 +11,7 @@ import os
 HERE = os.path.dirname(os.path.abspath(__file__))
 ZOP = (-0.40, 0.0); PIKO = (0.40, 0.0)
 HEAD_Z = 0.835; HEAD_R = 0.19
-L = 0.30                                    # plane length: the nose is L/2 ahead of the origin
+L = 0.42                                    # plane length: the nose is L/2 ahead of the origin
 
 
 def facing_dir(deg):
@@ -40,7 +40,7 @@ nape = head_point(PIKO, PF, -1.0, 0.02)
 T1, D1 = 0.0, 2.15
 pre1 = (0.05, -0.85, 0.95)
 hit1 = approach(fore, pre1)
-path1 = [[1.35, 0.7, 2.45], [1.0, 0.0, 2.1], [0.2, -1.1, 1.65], [-0.75, -0.9, 1.3], [-0.55, -0.55, 1.05], list(pre1), hit1]
+path1 = [[0.95, 0.45, 2.25], [0.75, -0.2, 2.0], [0.2, -1.1, 1.65], [-0.75, -0.9, 1.3], [-0.55, -0.55, 1.05], list(pre1), hit1]
 HIT1 = T1 + D1
 GROUND1 = [0.22, -0.52, 0.05]
 
@@ -60,7 +60,7 @@ path3 = [[1.08, 1.62, 0.22], [0.8, 1.8, 0.75], [0.15, 1.45, 1.15], [0.2, 0.95, 1
 HIT3 = T3 + D3
 GROUND3 = [0.62, -0.05, 0.05]
 
-plane = {"name": "plane", "type": "plane", "length": L, "span": 0.22, "keel": 0.05, "color": "cream", "stripe": "coral",
+plane = {"name": "plane", "type": "plane", "length": L, "span": 0.32, "keel": 0.07, "color": "yellow", "stripe": "coral",
          "location": path1[0], "rotation": [0, 0, 150],
          "motion": [
              {"t": T1, "path": {"points": path1[1:], "dur": D1, "ease": "linear", "bank": 0.7, "pitch": 0.8}},
@@ -105,9 +105,9 @@ spec = {
        {"look_at": [-0.55, -0.6, 1.3], "at": round(T2 + 1.6, 3), "duration": 0.3},
        {"expression": "scared", "at": round(DUCK - 0.2, 3), "duration": 1.4},
        {"until": round(DUCK, 3)}, {"play": "fear", "speed": 1.45},
-       {"look_at": [1.0, 1.42, 0.0], "at": round(LAND2 + 0.1, 3), "duration": 0.8},
+       {"look_at": [1.25, 0.15, 0.1], "at": round(LAND2 + 0.1, 3), "duration": 0.7},
        {"expression": "smug", "at": round(LAND2 + 0.5, 3), "duration": 2.2},
-       {"look_at": "camera", "at": round(LAND2 + 0.9, 3), "duration": 1.6},
+       {"look_at": [0.0, -4.0, 1.0], "at": round(LAND2 + 0.85, 3), "duration": 1.6},
        {"until": round(LAND2 + 0.9, 3)}, {"play": "happiness"},
        {"expression": "shocked", "at": round(HIT3 + 0.02, 3), "duration": 0.9},
        {"until": round(HIT3 + 0.02, 3)}, {"play": "exaggerated_reaction"},
